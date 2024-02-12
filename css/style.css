@@ -1,0 +1,13 @@
+
+.taicon { 
+	width: 20px; 
+	height: 20px; 
+	stroke-width:1; 
+	fill: currentcolor; 
+}
+
+.markdown pre { 
+	margin: 0 1rem;
+	background:#eee; padding: .5rem; max-height: 40vh; overflow:auto; font-size: .9rem; 
+}
+

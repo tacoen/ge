@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charSet="utf-8" />
+<script src='js/taicon.js'></script>
+<script src='js/marked.min.js'></script>
+<script src='js/tafunc.js'></script>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<style>
+
+#index-icon {
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+	margin: 1rem;
+}
+#index-icon span {
+	display: flex;
+    width: 128px;
+    height: 128px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#index-icon span:hover { background: #eee; cursor: pointer; }
+#index-icon span:hover svg { fill:red }
+#index-icon span svg { width: 72px; height: 72px; }
+#index-icon span b { display:block; margin-top: .5rem; text-align:center; font-weight: normal; font-size: .8rem; }
+
+
+.taicon.traffic-cone { fill:orange; }
+.taicon.feather { fill:none; stroke: green }
+.taicon[class*='cc'] { fill: gray} 
+
+#search { width: calc(100% - 2rem); line-height:2; font-family: monospace; margin: 1rem; }
+
+h1 { font-size: 5rem; margin-bottom:0; text-align:center }
+
+#temp { border: none; text-align: right; width:calc(50% - 1rem); outline: none; position: absolute; top: 1rem; right: 1rem; }
+#temp::before { content: "code:"; color: #c00; }
+</style>
+</head>
+<body>
+
+<h1>ta-icon</h1>
+<input type='search' id='search' value='' onchange='search(this)' autocomplete='off'>
+<input type='text' id='temp' value=''>
+
+<div id='index-icon'>
+</div>
+
+</body>
+
+
+<script>
+
+function search(obj) {
+		var key = obj.value;
+		var ndx = document.querySelector('#index-icon')	;
+		if (key.length >2) {
+			console.log(obj.value);
+
+			ndx.querySelectorAll('span').forEach( function (e) {
+				if(e.children[1].innerText.includes(key)) {
+					e.style.display='inherit'
+				} else {
+					e.style.display='none'
+				}
+			});
+		} else {
+		
+			ndx.querySelectorAll('span').forEach( function (e) {
+					e.style.display='inherit'
+			});
+		
+		}
+	}	
+	
+document.addEventListener("DOMContentLoaded", function() {
+
+
+	var div = document.getElementById('index-icon');
+	taicon.index().forEach( function(ic) {
+		var span = document.createElement('span')
+		var i = document.createElement('i')
+		i.setAttribute('data-icon',ic);
+		span.innerHTML='<b>'+ic+"</b>"
+		span.prepend(i)
+		div.append(span)
+	})	
+	
+	taicon_delay();
+	
+	document.querySelectorAll('#index-icon span').forEach( function (e) {
+	
+		e.addEventListener("click", function() {
+			document.getElementById('temp').value = '<i data-icon="'+ e.querySelector('b').innerText +'"></i>';
+			document.getElementById('temp').select();
+			document.execCommand("copy");
+		})
+	
+	})
+	
+	
+
+});
+
+
+</script>
+</html>
