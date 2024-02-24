@@ -1,0 +1,18 @@
+/**/
+
+.incode:hover { outline: 1px dotted #c009; position: relative; outline-offset: 5px; }
+.incode:hover:before {
+	position: absolute;
+	right: -5px;
+	top: -5px;
+	content: "code";
+	font-size: .6rem;
+	paddinG: .2rem;
+	background: #c009; color:#fff;
+	cursor: pointer;
+}
+
+xmp {
+	background:#ffeedd;
+	white-space: normal;
+}

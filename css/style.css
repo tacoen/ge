@@ -1,3 +1,16 @@
+html {
+	font-family: calibri,helvetica,sans-serif;
+}
+
+.hide { visibility: hidden; display: none; }
+
+html [data-modal],
+html [data-toggle],
+html [onclick] { cursor:pointer; }
+
+body>#htmlpart,
+body>#modal { display: none; }
+
 
 .taicon { 
 	width: 20px; 
@@ -8,6 +21,162 @@
 
 .markdown pre { 
 	margin: 0 1rem;
-	background:#eee; padding: .5rem; max-height: 40vh; overflow:auto; font-size: .9rem; 
+	background:#eee; 
+	padding: .5rem; max-height: 40vh; 
+	overflow:auto; font-size: .9rem; 
 }
+
+.abs { position: absolute; }
+.rel { position: relative; }
+.fix { position: fixed; z-index: 10;  }
+.abs.top,.fix.top { top: 0 }
+.abs.left,.fix.left { left: 0 }
+.abs.right,.fix.right { right: 0 }
+.abs.bottom,.fix.bottom { bottom: 0 }
+
+nav  { background: #eee; padding: .25rem;  }
+
+nav {
+	width: calc(100% - .5rem);
+	display: flex;flex-direction: row;
+	justify-content: space-between;
+	background-color: #ddd;
+	}
+
+nav.top { box-shadow: 0px 0 4px #000; z-index:11}
+
+nav.vertical {
+	width: 36px;
+	height: calc(100% - .5rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	}
+	
+
+	
+nav > div { display: flex; flex-direction: row; }
+
+
+
+nav button { 
+	height: 28px;
+	min-width: 28px;
+	display: flex;
+	align-items: center;
+	background: transparent;
+	border: 1px solid transparent;
+	outline: none;
+	margin: 0 .5rem; 
+}
+
+nav button.active,
+nav button:hover { border: 1px solid var(--b2);  }
+nav button.active svg { fill: var(--active); }
+
+nav button svg { margin-right: .25rem; }
+
+nav.vertical > div {display: flex;flex-direction: column;}
+nav.vertical > div.reverse { flex-direction: column-reverse; }
+
+nav.vertical button { margin: 1rem 0; width: 28px; }
+nav.vertical button > span { display: none; }
+
+aside.menu {
+	background: #ddd;
+	width:25%;
+	height: 100%;
+}
+
+aside.menu.left {
+	left:0;
+}
+
+body[topnav] { margin-top: 36px; }
+body[topnav] aside.menu.top.fix {top: 36px !important;height: calc(100vh - 39px) !important;}
+
+.menu ul { margin:0; padding:0 }
+.menu ul li { 
+	border-bottom: 1px solid var(--b3);
+    border-top: 1px solid var(--w5);
+    padding: .5rem 1rem;
+    display: flex;
+	align-items: center;
+    justify-content: space-between;
+}
+
+.menu.left ul li { 
+    flex-direction: row-reverse;
+}
+
+.menu.left ul li a {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+	text-decoration: none;
+	color: var(--fg);
+}
+
+.menu ul li:hover {
+	background-color:#fff2
+}
+
+.menu ul li .taicon { 
+stroke-width: 0; 
+fill: #999;
+
+}
+
+.scrollable {
+  scrollbar-color: var(--b2) var(--w2);
+  scrollbar-width: thin;
+	overflow-y: overlay;
+}
+dl.accordion dt { display: flex; justify-content:space-between; }
+
+dl.accordion dt .chevron-small-up { display: none; }
+dl.accordion dt .chevron-small-down { display: block; }
+
+dl.accordion dt.active .chevron-small-up { display: block; }
+dl.accordion dt.active .chevron-small-down { display: none; }
+
+dl.accordion dt { margin: 0; background: var(--b1); cursor: pointer; padding: .25rem }
+dl.accordion dd { margin: 0; border: 1px solid var(--b1); border-top: none; padding: 1rem .25rem }
+
+
+body.modal-layer .layer { z-index: 1; background: var(--w5); 
+position: fixed; top: 0; left:0; width:100%; height: 100%;  
+}
+
+body.modal-layer .modal { 
+border: 1px solid var(--b2);
+z-index: 2; visibility: visible; background: var(--bg); top: 36px; 
+padding: 0; margin: 1rem; 
+}
+
+.modal, .modal.full { width: calc(100% - 2rem - 2px); height: calc(100% - 36px - 2rem); }
+.modal.half { width: 50%; height: 50vh; }
+.modal.quater { width: 25%; }
+
+button.modal-close { 
+	position: absolute; right: 5px; top:5px;
+	border: none;
+	padding: 0;
+	margin: 0;
+	height: 16px;
+}
+
+.modal header { border-bottom: 1px solid var(--b2); line-height: 2rem; height: 2rem; 
+padding: 0 .5rem; }
+.modal main { padding: .5rem; background: var(--w4); height: calc(100% - 5rem) }
+
+.modal footer { border-top: 1px solid var(--b2); line-height: 2rem; height: 2rem; 
+padding: 0 .5rem; font-size: .8rem; }
+
+
+.b1 > div { border: 1px solid #ccc; }
+
+.b2 { background: #ccc; }
+.b2 > div { border: 1px solid #ccc; background: #fff; }
 

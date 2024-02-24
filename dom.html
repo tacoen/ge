@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charSet="utf-8" />
+<script src='js/taicon.js'></script>
+<script src='js/marked.min.js'></script>
+<script src='js/tafunc.js'></script>
+<script src='util.js'></script>
+<link rel="stylesheet" href="css/style.php?" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="util.css" type="text/css" media="all">
+</head>
+<body topnav>
+
+<nav class='fix  top left '>
+	<div>
+	<button data-toggle='aside.menu'><i data-icon='menu'></i><span>Menu</span></button>
+	</div>
+	<div class='reverse'>
+	<button href='index.html'><i data-icon='dots-3-v'></i><span>Option</span></button>
+	<button data-modal='#cobamodal'><i data-icon='book'></i><span>Manual</span></button>
+	</div>
+</nav>
+
+<aside class='hide menu fix left scrollable'>
+<ul>
+<li><a href='index.html'><i data-icon='new-message'></i>Test page</li></a></li>
+<li><a href='icon-index.html'><i data-icon='new-message'></i>Icon 1</li></a></li>
+<li><a href='ini'><i data-icon='new-message'></i>List 2</a></li></li>
+</ul>
+</aside>
+
+<main>
+
+<div class='flex'>
+	<div class='w25'>
+		<dl class='accordion'>
+			<dt>Coffee</dt>
+			<dd>Black hot drink</dd>
+			<dt id='coba'>Milk</dt>
+			<dd>White cold drink</dd>
+		</dl>
+	</div>
+	
+	<div class='w75'>
+	
+		<div>
+
+		<h1>Layout</h1>
+	
+		<p>5% step</p>
+
+		<div class='incode'>
+		
+		<div class='flex b1'>
+		<div class='w15'>w15</div>
+		<div class='w85'>w85</div>
+		</div>
+	
+		<div class='flex b1'>
+		<div class='w25'>w25</div>
+		<div class='w75'>w75</div>
+		</div>
+	
+		<div class='flex b1'>
+		<div class='w50'>w50</div>
+		<div class='w25'>w25</div>
+		<div class='w25'>w25</div>
+		</div>
+	
+		<div class='flex b1'>
+		<div class='w20'>w20</div>
+		<div class='w20'>w20</div>
+		<div class='w20'>w20</div>
+		<div class='w20'>w20</div>
+		<div class='w20'>w20</div>
+		</div>
+		
+		<div class='flex b2'>
+		<div class='w40'>w40</div>
+		</div>
+	
+		</div>
+		
+		</div>
+
+<div class='incode marv-lg'>
+<nav class=''>
+	<div>
+	<button data-toggle='aside.menu'><i data-icon='menu'></i><span>Menu</span></button>
+	</div>
+	<div class='reverse'>
+	<button href='index.html'><i data-icon='dots-3-v'></i><span>Option</span></button>
+	<button data-modal='#cobamodal'><i data-icon='book'></i><span>Manual</span></button>
+	</div>
+</nav>
+</div>
+	
+	<div class='flex warp pad-sm marv-lg'>
+
+	<div class='w30 incode'>
+	<h1>heading - h1</h1>
+	<h2>heading - h2</h2>
+	<h3>heading - h3</h3>
+	<h4>heading - h4</h4>
+	<h5>heading - h5</h5>
+	<h6>heading - h6</h6>
+	</div>
+
+	<div id='isian2' class='w70'>
+	</div>
+
+	</div>
+	
+</div>
+
+</main>
+
+<div id='modal'>
+		<div class='full' id='cobamodal'>
+		<header>
+			<span class='modal-title'>Judul Windows</span>
+		</header>
+		<main class='scrollable' id='isian'></main>
+		<footer>
+		Statusnya
+		</footer>
+	</div>
+</div>
+
+<div id='htmlpart'>
+	<div index='x'><i data-icon='squared-cross'></i></div>
+	<div index='accordion_button'><i data-icon='chevron-small-down'></i><i data-icon='chevron-small-up'	></i></div>
+</div>
+
+
+</body>
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+
+
+	ta.fetch('#isian','./lorem.txt')
+	ta.fetch('#isian2','./lorem.txt')
+
+	taicon_delay();
+
+});
+
+</script>
+</html>

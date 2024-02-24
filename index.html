@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
 <meta charSet="utf-8" />
-<script src='js/taicon.min.js'></script>
+<script src='js/taicon.js'></script>
 <script src='js/marked.min.js'></script>
 <script src='js/tafunc.js'></script>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 </head>
 <body>
 
-<div class='markdown'>
+<div class='markdown' style='padding-bottom:3rem'>
 
-# tafunc
+# tafunc test
 
 use console.log to play
 
@@ -33,46 +33,109 @@ bakal tambah 130k
 ta.attr_toString({'a':1,'b':2})
 "a='1' b='2'"
 
-ta.trim( " d  e " + ta.attr_toString({'a':1,'b':2}) + "e  f  " )
+ta.strim( " d  e " + ta.attr_toString({'a':1,'b':2}) + "e  f  " )
 "d e a='1' b='2'e f"
 
-ta.safestr(' [cobaan1 .,/?  {ok}  ')
-'_cobaan1_ok_'
+a.safestr(' [cobaan1 .,/?  {ok}  ')
+'cobaan1_ok'
 ```
 ## Sort
 ```
-ta.usort([ '9','8','2','3','40','13','4','9','9' ])
-(7)['9', '8', '40', '4', '3', '2', '13']
-
-ta.usort([ '9','8','2','3','40','13','4','9','9' ],'asc')
-(7)['13', '2', '3', '4', '40', '8', '9']
-
-ta.usort([ 9,8,2,3,40,13,4 ],'dsc','int')
-(7)[40, 13, 9, 8, 4, 3, 2]
-
-ta.usort([ 9,8,2,3,40,13,4 ],'asc','int')
-(7)[2, 3, 4, 8, 9, 13, 40]
+ta.uniqsort.string(["1","0","20","30"])
+(4) ['30', '20', '1', '0']
+ta.uniqsort.string(["1","0","20","30"],false)
+(4) ['0', '1', '20', '30']
+ta.uniqsort.number(["1","0","20","30"],false)
+(4) ['0', '1', '20', '30']
+ta.uniqsort.number(["1","0","20","30"])
+(4) ['30', '20', '1', '0']
+ta.uniqsort.number([1,0,20,30])
+(4) [30, 20, 1, 0]
+ta.uniqsort.number([1,0,20,30],false)
+(4) [0, 1, 20, 30]
 ```
 ## LocalStorage
 ```
-ta.ls_save('test',['lupe','lexi','bela'])
+ta.ls.save('test',['lupe','lexi','bela'])
 undefined
-ta.ls_get('test')
+ta.ls.get('test')
 (3)['lupe', 'lexi', 'bela']
-ta.ls_get('test')[2]
+ta.ls.get('test')[2]
 'bela'
-ta.ls_save('test',{'lupe':'lexi','bela':'vista'})
+ta.ls.save('test',{'lupe':'lexi','bela':'vista'})
 undefined
-ta.ls_get('test')['bela']
+ta.ls.get('test')['bela']
 'vista'
 ```
 
 ## fetch
 
+### using data-fetch:
+
 <pre data-fetch='./code.txt'></pre>
 
+### pure javascript
+
+```
+ta.fetch('#test','./lorem.txt')
+```
+<div id='test'></div>
+
+
+## html
+
+<div id='test2'></div>
+
+## text
+
+<div id='test3' data-set='321' class='w1 s7'></div>
+
+## elementof
+```
+ta.elementof('#test3')
+<div id=​"test3" data-set=​"321">​you have text not <i>html</i>​</div>​
+```
+
+## set
+```
+ta.set.html('#test2',"you <b>bold</b> and <i>italic</i>")
+ta.set.text('#test3',"you have text not <i>html</i>")
+ta.set.attr('#test3','data-sample','anysample');
+```
+
+## get
+```
+ta.get.value('#test3')
+null
+ta.get.text('#test3')
+'you have text not <i>html</i>'
+ta.get.html('#test3')
+'you have text not &lt;i&gt;html&lt;/i&gt;'
+ta.get.attr('#test3','data-set')
+'321'
+ta.get.attr(document.getElementById('test3'),'data-set')
+'321'
+```
+
+## class
+
+```
+ta.class.value('#test3')
+'orange blue'
+ta.class.add('#test3','lines')
+undefined
+ta.class.rewrite('#test3','red sky')
+undefined
+ta.class.has('#test3','sky')
+true
+ta.class.remove('#test3','sky')
+undefined
+ta.class.value('#test3')
+'red'
+```
+
 </div>
-<hr>
+
 
 </body>
 
@@ -88,6 +151,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.querySelectorAll('[data-fetch]').forEach( function(e) {
 		ta.fetch(e)
 	});
+
+	ta.fetch(document.querySelector('#test'),'./lorem.txt')
+	ta.set.html('#test2',"you <b>bold</b> and <i>italic</i>")
+	ta.set.text('#test3',"you have text not <i>html</i>")
+	ta.set.attr('#test3','data-sample','anysample');
 	
 	taicon_delay();
 
