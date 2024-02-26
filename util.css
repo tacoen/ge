@@ -1,10 +1,10 @@
 /**/
 
-.incode:hover { outline: 1px dotted #c009; position: relative; outline-offset: 5px; }
+.incode:hover { outline: 1px dotted #c009; position: relative;  }
 .incode:hover:before {
 	position: absolute;
-	right: -5px;
-	top: -5px;
+	right: 0;
+	top: -1px;
 	content: "code";
 	font-size: .6rem;
 	paddinG: .2rem;
@@ -16,3 +16,4 @@ xmp {
 	background:#ffeedd;
 	white-space: normal;
 }
+.coded { padding: 0 !important }

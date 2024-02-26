@@ -5,30 +5,39 @@
 <script src='js/taicon.js'></script>
 <script src='js/marked.min.js'></script>
 <script src='js/tafunc.js'></script>
+<script src='util.js'></script>
+<link rel="stylesheet" href="css/style.php?" type="text/css" media="all">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="util.css" type="text/css" media="all">
 </head>
-<body>
+</head>
+<body class='scrollable'>
 
-<div class='markdown' style='padding-bottom:3rem'>
+<div class='flex'>
 
-# tafunc test
+<div class="w50 ph pv">
 
-use console.log to play
+<h1>Function</h1>
 
-* [dom](dom.html)
-
-## taicon (entypo)
-
-bakal tambah 130k
-
-<i data-icon='voicemail'></i>
-<i data-icon='user'></i>
-<i data-icon="ctl-paus"></i>
-
-[icon-index](icon-index.html)
+<p>Use console.log to play</p>
 
 
-## String Manipulation
+<dl class='accordion'>
+
+<dt>Elementof</dt>
+<dd class='markdown'>
+```
+ta.elementof('#test3')
+```
+<div class='incode ph pv'>
+<div id=​"test3" data-set=​"321">​you have text not <i>html</i>​</div>​
+</div>
+
+</dd>
+
+<dt>String Manipulation</dt>
+<dd class='markdown'>
+
 ```
 ta.attr_toString({'a':1,'b':2})
 "a='1' b='2'"
@@ -39,7 +48,10 @@ ta.strim( " d  e " + ta.attr_toString({'a':1,'b':2}) + "e  f  " )
 a.safestr(' [cobaan1 .,/?  {ok}  ')
 'cobaan1_ok'
 ```
-## Sort
+</dd>
+
+<dt>Sort</dt>
+<dd class='markdown'>
 ```
 ta.uniqsort.string(["1","0","20","30"])
 (4) ['30', '20', '1', '0']
@@ -54,7 +66,10 @@ ta.uniqsort.number([1,0,20,30])
 ta.uniqsort.number([1,0,20,30],false)
 (4) [0, 1, 20, 30]
 ```
-## LocalStorage
+</dd>
+
+<dt>LocalStorage</dt>
+<dd class='markdown'>
 ```
 ta.ls.save('test',['lupe','lexi','bela'])
 undefined
@@ -67,41 +82,10 @@ undefined
 ta.ls.get('test')['bela']
 'vista'
 ```
+</dd>
 
-## fetch
-
-### using data-fetch:
-
-<pre data-fetch='./code.txt'></pre>
-
-### pure javascript
-
-```
-ta.fetch('#test','./lorem.txt')
-```
-<div id='test'></div>
-
-
-## html
-
-<div id='test2'></div>
-
-## text
-
-<div id='test3' data-set='321' class='w1 s7'></div>
-
-## elementof
-```
-ta.elementof('#test3')
-<div id=​"test3" data-set=​"321">​you have text not <i>html</i>​</div>​
-```
-
-## set
-```
-ta.set.html('#test2',"you <b>bold</b> and <i>italic</i>")
-ta.set.text('#test3',"you have text not <i>html</i>")
-ta.set.attr('#test3','data-sample','anysample');
-```
+<dt>Get</dt>
+<dd class='markdown'>
 
 ## get
 ```
@@ -116,27 +100,114 @@ ta.get.attr('#test3','data-set')
 ta.get.attr(document.getElementById('test3'),'data-set')
 '321'
 ```
+</dd>
 
-## class
+
+<dt>Set</dt>
+<dd>
+<div class='markdown'>
+```
+ta.set.html('#test2',"you <b>bold</b> and <i>italic</i>")
+ta.set.text('#test3',"you have text not <i>html</i>")
+ta.set.attr('#test3','data-sample','anysample');
+```
+</div>
+<div class='incode ph2 pv2'>
+<span id='test3' data-set='321' class='w1 s7'></span>
+</div>
+
+<dt>Fetch</dt>
+<dd>
+
+using data-fetch:
+
+<div class='incode ph'>
+<div data-fetch='./lorem.txt'></div>
+</div>
+
+<div class='markdown'>
+
+Javascript:
 
 ```
-ta.class.value('#test3')
+ta.fetch('#test','./lorem.txt')
+```
+</div>
+
+</dd>
+
+
+<dt>class</dt>
+
+<dd>
+
+<div class='incode ph pv'>
+<div id='ct1'>Hi you!</div>
+</div>
+
+<div class='markdown'>
+```
+ta.class.value('#ct1')
 'orange blue'
-ta.class.add('#test3','lines')
+ta.class.add('#ct1','lines')
 undefined
-ta.class.rewrite('#test3','red sky')
+ta.class.rewrite('#ct3','red sky')
 undefined
-ta.class.has('#test3','sky')
+ta.class.has('#ct3','sky')
 true
-ta.class.remove('#test3','sky')
+ta.class.remove('#ct3','sky')
 undefined
-ta.class.value('#test3')
+ta.class.value('#ct3')
 'red'
 ```
+</div>
+</dd>
+
+</dl>
+</div>
+
+<div class='w50 p-lg ph markdown' style='padding-bottom:3rem'>
+
+# tafunc test
+
+## Markdown
+
+  * [dom](dom.html)
+  * [icon-index](icon-index.html)
+
+## taicon (entypo)
+
+bakal tambah 130k
+
+<i data-icon='voicemail'></i>
+<i data-icon='user'></i>
+<i data-icon="ctl-paus"></i>
+
+
+# Fetch
+
+<div id='fetched'></div>
+
 
 </div>
 
+</div>
 
+<hr>
+
+
+
+
+
+
+
+
+</div>
+
+<div id='htmlpart'>
+	<div index='x'><i data-icon='squared-cross'></i></div>
+	<div index='accordion_button'><i data-icon='chevron-small-down'></i><i data-icon='chevron-small-up'	></i></div>
+</div>
 </body>
 
 
@@ -152,10 +223,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		ta.fetch(e)
 	});
 
-	ta.fetch(document.querySelector('#test'),'./lorem.txt')
-	ta.set.html('#test2',"you <b>bold</b> and <i>italic</i>")
-	ta.set.text('#test3',"you have text not <i>html</i>")
-	ta.set.attr('#test3','data-sample','anysample');
+	ta.fetch(document.querySelector('#fetched'),'./code.txt')
+	
+//	ta.set.html('#test2',"you <b>bold</b> and <i>italic</i>")
+//	ta.set.text('#test3',"you have text not <i>html</i>")
+//	ta.set.attr('#test3','data-sample','anysample');
 	
 	taicon_delay();
 

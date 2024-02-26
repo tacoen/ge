@@ -12,7 +12,7 @@
 </head>
 <body topnav>
 
-<nav class='fix  top left '>
+<nav class='fix p-xs top left'>
 	<div>
 	<button data-toggle='aside.menu'><i data-icon='menu'></i><span>Menu</span></button>
 	</div>
@@ -32,85 +32,151 @@
 
 <main>
 
-<div class='flex'>
-	<div class='w25'>
+<div class='flex warp s-ph s-pv'>
+	<div class='w40'>
 		<dl class='accordion'>
-			<dt>Coffee</dt>
-			<dd>Black hot drink</dd>
-			<dt id='coba'>Milk</dt>
-			<dd>White cold drink</dd>
+			<dt>Color Gradient</dt>
+			<dd class='incode'>
+			<div class='flex'>
+			<div class="s-pv s-ph w50" style="background:#d33">
+			<div class='bg-b3'>bg-b3</div>
+			<div class='bg-b2'>bg-b2</div>
+			<div class='bg-b1'>bg-b1</div>
+			<div class='bg-w1'>bg-w1</div>
+			<div class='bg-w2'>bg-w2</div>
+			<div class='bg-w3'>bg-w3</div>
+			</div>
+			<div class="s-pv s-ph w50" style="background:#fc3">
+			<div class='bg-b3'>bg-b3</div>
+			<div class='bg-b2'>bg-b2</div>
+			<div class='bg-b1'>bg-b1</div>
+			<div class='bg-w1'>bg-w1</div>
+			<div class='bg-w2'>bg-w2</div>
+			<div class='bg-w3'>bg-w3</div>
+			</div>
+			</div>
+			</dd>
+			<dt id='coba'>Heading</dt>
+			<dd class='incode'>
+				<h1>heading - h1</h1>
+				<h2>heading - h2</h2>
+				<h3>heading - h3</h3>
+				<h4>heading - h4</h4>
+				<h5>heading - h5</h5>
+				<h6>heading - h6</h6>
+			</dd>
+
+			<dt>Layout & Padding</dt>
+			<dd class='incode'>
+				<div class='flex b1 p-lg s-ph s-pv'>
+					<div class='w15'>w15</div>
+					<div class='w85'>w85</div>
+				</div>
+	
+				<div class='flex b1 p-xs s-ph'>
+					<div class='w25'>w25</div>
+					<div class='w75'>w75</div>
+				</div>
+				
+				<div class='flex b1 p-sm s-ph'>
+					<div class='w50'>w50</div>
+					<div class='w25'>w25</div>
+					<div class='w25 ph'>w25</div>
+				</div>
+				
+				<div class='flex b1 p-md s-ph s-pv'>
+					<div class='w20 ph2 pv2'>w20</div>
+					<div class='w20'>w20</div>
+					<div class='w20'>w20</div>
+					<div class='w20'>w20</div>
+					<div class='w20'>w20</div>
+				</div>
+
+				<div class='flex b1 p-xs s-ph s-pv'>
+					<div class='w33'>w33</div>
+					<div class='w34'>w34</div>
+					<div class='w33'>w33</div>
+				</div>
+				
+				<div class='flex b2 s-ph s-pv'>
+					<div class='w40'>w40</div>
+				</div>
+			
+				<div class='flex b2'>
+					<div class='w100 ph pv'>w100</div>
+				</div>
+			</dd>
+			<dt>Margin</dt>
+			<dd class='incode'>
+			<div class='flex b1 s-ph s-pv s-flex'>
+			<div class='mv mh p-lg'>lg</div>
+			<div class='mv mh p-md'>md</div>
+			<div class='mv mh p-sm'>sm</div>
+			<div class='mv mh p-xs'>xs</div>
+			</div>
+			</dd>
+
+		</dl>
+	</div>
+	<div class='w60'>
+		<dl class='accordion'>
+			<dt>Navigation Bar</dt>
+			<dd class='incode'>
+				<nav class=''>
+					<div>
+					<button data-toggle='aside.menu'><i data-icon='menu'></i>
+					<span>Menu</span></button>
+					</div>
+					<div class='reverse'>
+					<button href='index.html'><i data-icon='dots-3-v'></i><span>Option</span></button>
+					<button data-modal='#cobamodal'><i data-icon='book'></i><span>Manual</span></button>
+					</div>
+				</nav>
+			</dd>
+			<dt>Inline Form</dt>
+			<dd class='incode'>
+				<form class='w100 inline'>
+				<span><b>Inline:</b></span>
+				<button>submit</button>
+				<input type='text' name='c1'>
+				<select name='selection'>
+					<option>Option1</option>
+					<option>Option2</option>
+				</select>
+				<button>submit</button>
+				</form>
+			</dd>
+			<dt>Simple Form</dt>
+			<dd class='incode'>
+				<form class='w100 label30 w100 p-md'>
+				<h3>Simpel Form</h3>
+				<fieldset>
+				<p><label>text:</label><input name='text' type='text'></p>
+				<p><label>password:</label><input name='password' type='password'></p>
+				<p><label>search:</label><input name='text' type='search'></p>
+				<p><label>Select:</label><select name='selection'>
+					<option>Option1</option>
+					<option>Option2</option>
+				</select></p>
+				<p><label>textarea :</label><textarea></textarea></p>
+				</fieldset>
+				</form>
+			</dd>
 		</dl>
 	</div>
 	
-	<div class='w75'>
-	
-		<div>
-
-		<h1>Layout</h1>
-	
-		<p>5% step</p>
-
-		<div class='incode'>
-		
-		<div class='flex b1'>
-		<div class='w15'>w15</div>
-		<div class='w85'>w85</div>
-		</div>
-	
-		<div class='flex b1'>
-		<div class='w25'>w25</div>
-		<div class='w75'>w75</div>
-		</div>
-	
-		<div class='flex b1'>
-		<div class='w50'>w50</div>
-		<div class='w25'>w25</div>
-		<div class='w25'>w25</div>
-		</div>
-	
-		<div class='flex b1'>
-		<div class='w20'>w20</div>
-		<div class='w20'>w20</div>
-		<div class='w20'>w20</div>
-		<div class='w20'>w20</div>
-		<div class='w20'>w20</div>
-		</div>
-		
-		<div class='flex b2'>
-		<div class='w40'>w40</div>
-		</div>
-	
-		</div>
-		
-		</div>
-
-<div class='incode marv-lg'>
-<nav class=''>
-	<div>
-	<button data-toggle='aside.menu'><i data-icon='menu'></i><span>Menu</span></button>
-	</div>
-	<div class='reverse'>
-	<button href='index.html'><i data-icon='dots-3-v'></i><span>Option</span></button>
-	<button data-modal='#cobamodal'><i data-icon='book'></i><span>Manual</span></button>
-	</div>
-</nav>
-</div>
-	
-	<div class='flex warp pad-sm marv-lg'>
-
-	<div class='w30 incode'>
-	<h1>heading - h1</h1>
-	<h2>heading - h2</h2>
-	<h3>heading - h3</h3>
-	<h4>heading - h4</h4>
-	<h5>heading - h5</h5>
-	<h6>heading - h6</h6>
+	<div class='w33'>
+	33
 	</div>
 
-	<div id='isian2' class='w70'>
+	<div class='w33'>
+	33
 	</div>
 
+	<div class='w33'>
+	34
 	</div>
+	
 	
 </div>
 
@@ -141,11 +207,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 	ta.fetch('#isian','./lorem.txt')
-	ta.fetch('#isian2','./lorem.txt')
+	// ta.fetch('#isian2','./lorem.txt')
 
 	taicon_delay();
 
 });
+
+
+
 
 </script>
 </html>
