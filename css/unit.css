@@ -1,0 +1,70 @@
+/* this style.php generation */
+
+.w100  { width:100%;  }
+.w33   { width:33%;  }
+.w34   { width:34%;  }
+.w15  { width:15%; }
+.w20  { width:20%; }
+.w25  { width:25%; }
+.w30  { width:30%; }
+.w35  { width:35%; }
+.w40  { width:40%; }
+.w45  { width:45%; }
+.w50  { width:50%; }
+.w55  { width:55%; }
+.w60  { width:60%; }
+.w65  { width:65%; }
+.w70  { width:70%; }
+.w75  { width:75%; }
+.w80  { width:80%; }
+.w85  { width:85%; }
+html .label25 label { display: inline-flex; width: calc(25% - var(--p1)); padding-right: var(--p1) }
+html .label25 label + * { display: inline-flex; width: calc(100% - 25%) }
+html .label30 label { display: inline-flex; width: calc(30% - var(--p1)); padding-right: var(--p1) }
+html .label30 label + * { display: inline-flex; width: calc(100% - 30%) }
+html .label35 label { display: inline-flex; width: calc(35% - var(--p1)); padding-right: var(--p1) }
+html .label35 label + * { display: inline-flex; width: calc(100% - 35%) }
+html .label40 label { display: inline-flex; width: calc(40% - var(--p1)); padding-right: var(--p1) }
+html .label40 label + * { display: inline-flex; width: calc(100% - 40%) }
+html .label45 label { display: inline-flex; width: calc(45% - var(--p1)); padding-right: var(--p1) }
+html .label45 label + * { display: inline-flex; width: calc(100% - 45%) }
+html .label50 label { display: inline-flex; width: calc(50% - var(--p1)); padding-right: var(--p1) }
+html .label50 label + * { display: inline-flex; width: calc(100% - 50%) }
+html .label55 label { display: inline-flex; width: calc(55% - var(--p1)); padding-right: var(--p1) }
+html .label55 label + * { display: inline-flex; width: calc(100% - 55%) }
+html .label60 label { display: inline-flex; width: calc(60% - var(--p1)); padding-right: var(--p1) }
+html .label60 label + * { display: inline-flex; width: calc(100% - 60%) }
+html .label65 label { display: inline-flex; width: calc(65% - var(--p1)); padding-right: var(--p1) }
+html .label65 label + * { display: inline-flex; width: calc(100% - 65%) }
+html .label70 label { display: inline-flex; width: calc(70% - var(--p1)); padding-right: var(--p1) }
+html .label70 label + * { display: inline-flex; width: calc(100% - 70%) }
+html .label75 label { display: inline-flex; width: calc(75% - var(--p1)); padding-right: var(--p1) }
+html .label75 label + * { display: inline-flex; width: calc(100% - 75%) }
+.b1 { border-color: var(--b1) }
+.b2 { border-color: var(--b2) }
+.b3 { border-color: var(--b3) }
+.b4 { border-color: var(--b4) }
+.b5 { border-color: var(--b5) }
+.b6 { border-color: var(--b6) }
+.bg-b1 { background-color: var(--b1); color: var(--bg) } 
+.bg-b2 { background-color: var(--b2); color: var(--bg) } 
+.bg-b3 { background-color: var(--b3); color: var(--bg) } 
+.bg-b4 { background-color: var(--b4); color: var(--bg) } 
+.bg-b5 { background-color: var(--b5); color: var(--bg) } 
+.bg-b6 { background-color: var(--b6); color: var(--bg) } 
+.bg-w1 { background-color: var(--w1); color: var(--fg) } 
+.bg-w2 { background-color: var(--w2); color: var(--fg) } 
+.bg-w3 { background-color: var(--w3); color: var(--fg) } 
+.bg-w4 { background-color: var(--w4); color: var(--fg) } 
+.bg-w5 { background-color: var(--w5); color: var(--fg) } 
+.bg-w6 { background-color: var(--w6); color: var(--fg) } 
+.w1 { border-color: var(--w1) }
+.w2 { border-color: var(--w2) }
+.w3 { border-color: var(--w3) }
+.w4 { border-color: var(--w4) }
+.w5 { border-color: var(--w5) }
+.w6 { border-color: var(--w6) }
+
+html .bo-l { border-width:3px; }
+html .bo-m { border-width:2px; }
+html .bo { border-width:1px; }

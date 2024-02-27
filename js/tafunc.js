@@ -1,16 +1,17 @@
 class TaJsFunc {
-	
+
 	constructor() {
 		this.version = "0.1a";
 		this.ltm = Date.now();
 		this.host = window.location.pathname.toLowerCase().replace(/\W/g, "");
 		this.lsd = JSON.parse(localStorage.getItem(this.host));
+		this.ckies = JSON.parse(localStorage.getItem("ckies")) || {};
 	};
-	
+
 	randomnumber(l=9999) {
 		return Math.floor(Math.random() * (l - l+1)) + 1000;
 	};
-	
+
 	notempty(w) {
 		if (typeof w !== 'undefined') {
 			if ( w === null) { return false; }
@@ -36,9 +37,9 @@ class TaJsFunc {
 		});
 		return this.strim(str);
 	};
-	
+
 	/* localstorage */
-	
+
 	ls = {
 		init: (data={}) => {
 			if ( this.lsd == null) { localStorage.setItem(this.host,JSON.stringify(data)) }
@@ -54,6 +55,24 @@ class TaJsFunc {
 		}
 	};
 	
+	/* localstorage - cookies */	
+
+	cookies = {
+
+		remove: (w) => {
+			delete(this.ckies[w]);
+		},
+		set: (w,v) => {
+			this.ckies[w] = JSON.stringify(v);
+			localStorage.setItem('ckies', JSON.stringify(this.ckies));			
+		},
+		get: (w) => {
+			var v = this.ckies[w] || null
+			return JSON.parse(v);
+		}
+		
+	};
+		
 	/* unique sort */
 
 	uniq(value, index, self) {
@@ -78,7 +97,7 @@ class TaJsFunc {
 			return retArray.filter(this.uniq);
 		}
 	};
-	
+
 	elementof(e) {
 		if (typeof e == 'string') { e = document.querySelector(e) }
 		return e
@@ -92,7 +111,11 @@ class TaJsFunc {
 		remove: (e,c) => { this.elementof(e).classList.remove(c); },
 		has: (e,c) => { return this.elementof(e).classList.contains(c) || false; },
 		rewrite: (e,c) => { this.elementof(e).className=c; },
-		toggle: (e,c) => { this.elementof(e).classList.toggle(c); }
+		toggle: (e,c) => { this.elementof(e).classList.toggle(c); },
+		chained: (e,c,m='remove') => { e.parentNode.querySelectorAll(e.tagName).forEach( (el) => {
+			if (m == 'remove') { this.class.remove(el,c); } else { this.class.add(el,c); }
+		});
+}
 	};
 
 	get = {
@@ -103,7 +126,7 @@ class TaJsFunc {
 		value:(e) => { return this.elementof(e).value|| null; },
 		attr: (e,a) => { return this.elementof(e).getAttribute(a)|| null; }
 	};
-	
+
 	set = {
 		html: (e, html) => { this.elementof(e).innerHTML = html; },
 		text: (e, html) => { this.elementof(e).innerText = html; },
@@ -111,11 +134,11 @@ class TaJsFunc {
 		value:(e,html) => { this.elementof(e).value=html; },
 		attr: (e,a,html) =>{ this.elementof(e).setAttribute(a,html) }
 	};
-	
+
 
 	/* xhr.fetch */
 	fetch(e, url = null, chains, cvar = {}) {
-		
+
 		e = this.elementof(e)
 		if (url == null) { url = e.getAttribute("data-fetch"); }
 		fetch(url + "?nocache=" + this.ltm)
@@ -131,7 +154,7 @@ class TaJsFunc {
 				console.warn(error);
 			});
 	};
-	
+
 	async load_json(url) {
 		try {
 			const response = await fetch(url);
@@ -139,29 +162,29 @@ class TaJsFunc {
 			return data;
 		} catch (error) {
 			console.warn(error);
-		}	
+		}
 	};
 
 	attr_array(e) {
 		const aa = [...this.elementof(e).attributes];
 		const attrs = aa.reduce((attrs, attribute) => {
 			attrs[attribute.name] = attribute.value;
-			return attrs; 
-		}, {}	)	
+			return attrs;
+		}, {}	)
 
-		return attrs; 
-		
+		return attrs;
+
 	};
-	
+
 
 }
 
 class TaUIFunc {
-	
+
 	constructor() {
 		const ta = new TaJsFunc();
 	};
-	
+
 	toggle(obj) {
 		var ele = ta.elementof(obj)
 		if (ta.class.has(ele,'hide') ) {
@@ -170,7 +193,7 @@ class TaUIFunc {
 			ta.class.add(ele,'hide');
 		}
 	};
-	
+
 	toggleclass(obj,what='active') {
 		var ele = ta.elementof(obj)
 		if (ta.class.has(ele,what) ) {
@@ -179,7 +202,7 @@ class TaUIFunc {
 			ta.class.add(ele,what);
 		}
 	};
-	
+
 	button(c,attr={}) {
 		var btn = document.createElement('button'); btn.innerHTML=c;
 		Object.keys(attr).forEach((a) => {
@@ -190,7 +213,7 @@ class TaUIFunc {
 
 	modal(what,button) {
 		if (document.body.classList.contains('modal-layer')) {
-			document.querySelectorAll('.modal-layer .modal').forEach( function(e) { 
+			document.querySelectorAll('.modal-layer .modal').forEach( function(e) {
 				e.remove(); })
 			ta.class.toggle(document.body,'modal-layer');
 		} else {
@@ -201,106 +224,130 @@ class TaUIFunc {
 			var eleid = ta.safestr('modal_'+ what);
 			div.id = eleid;
 			div.innerHTML = ta.get.html('#modal>'+what);
-			
+
 			div.prepend( this.button(this.htmlpart('x'),
-					{ 'class': 'modal-close', 
-					  'onclick':'t.modalclose("'+eleid+'")' 
-					 }) 
+					{ 'class': 'modal-close',
+					  'onclick':'t.modalclose("'+eleid+'")'
+					 })
 			);
-			
+
 			document.body.appendChild(layer);
 			document.body.appendChild(div);
-			
+
 		}
 	}
-	
+
 	modalclose(obj) {
-		document.querySelectorAll('.modal-layer .modal').forEach( function(e) { 
+		document.querySelectorAll('.modal-layer .modal').forEach( function(e) {
 				e.remove(); })
-		ta.class.toggle(document.body,'modal-layer');			
+		ta.class.toggle(document.body,'modal-layer');
 	}
-		
+
 	htmlpart(w) {
 		return document.querySelector('#htmlpart [index="'+w+'"').innerHTML || "<!-- hp: "+w+"-->";
 	}
-	
-	
-	
-	
+
+
+
+
 }
 
 
+/*--- begin of ui loader --- */
+
 let t = new TaUIFunc();
+let ta = new TaJsFunc();
+
+function tui_init(w) {
+
+	switch(w) {
+
+	case "buttons":
+
+		var buttons = document.querySelectorAll("button"); buttons.forEach((button) => {
+
+			ta.class.remove(button,'active')
+
+			button.addEventListener('click', () => {
+
+				var attrs = ta.attr_array(button);
+				['href','data-toggle','data-modal'].forEach( (w) => {
+					if (ta.notempty(attrs[w])) {
+						switch(w) {
+							case 'data-toggle':
+								t.toggle(attrs[w]);
+								t.toggleclass(button);
+								break;
+							case 'data-modal':
+								t.modal(attrs[w],button);
+								t.toggleclass(button);
+								break;
+							case 'href':
+								window.open(attrs[w],"_self") ;
+								break;
+							default: console.log(w,attrs[w]);
+						}
+					}
+				})
+			})
+
+		}); /* buttons */
+
+	break;
+	case 'tabnav':
+
+		var tablis = document.querySelectorAll(".tab-nav li"); tablis.forEach((li) => {
+			li.addEventListener('click', () => {
+				ta.class.chained(li,'active');
+
+				var target = ta.get.attr(li,'data-tab');
+				var te = ta.elementof(target);
+				var pa = te.parentElement.querySelectorAll('.tab')
+
+				pa.forEach((tb) => { ta.class.add(tb,'hide'); });
+
+				if ( ta.class.has(target,'hide') ) {
+					ta.class.remove(target,'hide')
+				} else {
+					ta.class.add(target,'hide')
+				}
+				ta.class.toggle(li,'active');
+			});
+
+		}); /* tabnav */
+	break;
+
+	case "accordion":
+
+		var adl = document.querySelectorAll("dl.accordion"); adl.forEach((dl) => {
+
+			dl.querySelectorAll('dd').forEach( (dd) => {
+					ta.class.add(dd,'hide');
+			});
+			dl.querySelectorAll('dt').forEach( (dt) => {
+				dt.innerHTML = dt.innerHTML + t.htmlpart('accordion_button');
+				ta.class.remove(dt,'active');
+				dt.addEventListener('click', () => {
+					ta.class.toggle(dt,'active');
+					ta.class.toggle(dt.nextElementSibling,'hide')
+				})
+			});
+
+		}); /* accordions */
+	break;
+	default:
+		console.log('---default');
+
+	}
+}
+
 
 
 document.addEventListener("DOMContentLoaded", (e) => {
-	
-	var buttons = document.querySelectorAll("button"); buttons.forEach((button) => {
-		
-		ta.class.remove(button,'active')
-		
-		button.addEventListener('click', () => {
 
-			var attrs = ta.attr_array(button);
-			['href','data-toggle','data-modal'].forEach( (w) => {
-				if (ta.notempty(attrs[w])) {
-					switch(w) {
-						case 'data-toggle': 
-							t.toggle(attrs[w]);
-							t.toggleclass(button);
-							break;
-						case 'data-modal':
-							t.modal(attrs[w],button);
-							t.toggleclass(button);
-							break;
-						case 'href':
-							window.open(attrs[w],"_self") ; 
-							break;
-						default: console.log(w,attrs[w]);
-					}
-				}
-			})
-		})
-			
-	}); /* buttons */
-	
-	var adl = document.querySelectorAll("dl.accordion"); adl.forEach((dl) => {
+	tui_init('buttons')
+	tui_init('accordion');
+	tui_init('tabnav');
 
-		dl.querySelectorAll('dd').forEach( (dd) => { 
-				ta.class.add(dd,'hide'); 
-		});
-		dl.querySelectorAll('dt').forEach( (dt) => { 
-			dt.innerHTML = dt.innerHTML + t.htmlpart('accordion_button');
-			ta.class.remove(dt,'active');
-			dt.addEventListener('click', () => {
-				ta.class.toggle(dt,'active');
-				ta.class.toggle(dt.nextElementSibling,'hide')
-			})
-		});
-		
-	}); /* accordions */
-	
-	var tablis = document.querySelectorAll(".tab-nav li"); tablis.forEach((li) => {	
-
-		li.addEventListener('click', () => {
-			var target = ta.get.attr(li,'data-tab');
-
-			var te = ta.elementof(target);
-			console.log(te)
-			var pa = te.parentElement.querySelectorAll('.tab')
-
-			pa.forEach((tb) => {
-				ta.class.add(tb,'hide');
-			});
-			if ( ta.class.has(target,'hide') ) {
-				ta.class.remove(target,'hide')
-			} else {
-				ta.class.add(target,'hide')
-			}
-		});
-		
-	}); /* accordions */
-	
 });
 
-let ta = new TaJsFunc();

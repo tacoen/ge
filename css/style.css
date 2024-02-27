@@ -9,12 +9,17 @@ body>#modal { display: none; }
 }
 
 .markdown pre { 
-	margin: 0 1rem;
 	background:#eee; 
-	padding: .5rem; max-height: 40vh; 
+	padding: var(--p1); max-height: 40vh; 
 	overflow:auto; font-size: .9rem; 
 }
 
+dd.markdown>pre { 
+	margin: calc(var(--p1) * -1);
+	
+}
+
+.markdown :not(pre) code {background: var(--b1);line-height: 1.5;display: inline-block;padding: 0 .25rem;}
 
 select { height: 1.3rem; }
 
@@ -55,7 +60,7 @@ html {
 
 button,
 a,
-html .tab [data-tab],
+html .tab-nav [data-tab],
 html [data-modal],
 html [data-toggle],
 html [onclick] { cursor:pointer; }
@@ -278,7 +283,7 @@ dl.accordion dt.active .chevron-small-up { display: block; }
 dl.accordion dt.active .chevron-small-down { display: none; }
 
 dl.accordion dt {margin: 0;background: var(--b1);cursor: pointer;padding: var(--p1);border-bottom: 1px solid var(--b2);border-top: 1px solid var(--w2);}
-dl.accordion dd { margin: 0; border: 1px solid var(--b1); border-top: none; padding: 1rem .25rem }
+dl.accordion dd {margin: 0;border: 1px solid var(--b1);border-top: none;padding: var(--p1);}
 
 
 body.modal-layer .layer { z-index: 1; background: var(--w5); 
