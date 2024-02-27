@@ -53,12 +53,17 @@ html {
 
 * { box-sizing: border-box; }
 
-
+button,
+a,
+html .tab [data-tab],
 html [data-modal],
 html [data-toggle],
 html [onclick] { cursor:pointer; }
 
-.hide { visibility: hidden; display: none; }
+.hide { display: none; }
+.show { display: block; }
+.flex.show { display: flex; }
+
 .abs { position: absolute; }
 .rel { position: relative; }
 .fix { position: fixed; z-index: 10;  }
@@ -73,6 +78,8 @@ body {
 	color: var(--fg);
 	margin:0; padding:0;
 }
+
+.ubg { color: var(--bg); }
 
 .flex { display: flex; flex-direction: row; }
 .flex.warp { display: flex; flex-wrap: wrap;}
@@ -112,6 +119,11 @@ html .mv { margin-top: var(--p1); margin-bottom: var(--p1) }
 html .mh2 { margin-left: var(--p2); margin-right: var(--p2) }
 html .mv2 { margin-top: var(--p2); margin-bottom: var(--p2) }
 
+html .s-mh>* { margin-left: var(--p1); margin-right: var(--p1) }
+html .s-mv>* { margin-top: var(--p1); margin-bottom: var(--p1) }
+html .s-mh2>* { margin-left: var(--p2); margin-right: var(--p2) }
+html .s-mv2>* { margin-top: var(--p2); margin-bottom: var(--p2) }
+
 html .ph { padding-left: var(--p1); padding-right: var(--p1) }
 html .pv { padding-top: var(--p1); padding-bottom: var(--p1) }
 html .ph2 { padding-left: var(--p2); padding-right: var(--p2) }
@@ -147,7 +159,38 @@ nav.vertical {
 	
 nav > div { display: flex; flex-direction: row; }
 
+button { 
+	display: flex;
+	align-items: center;
+	border: 1px solid var(--b3);
+}
 
+button.button {
+	border: 2px solid var(--b3);
+	border-top: 2px solid var(--w2);
+	border-left: 2px solid var(--w2);
+	background-color: #cccccc;
+}
+
+button.naked {
+	background: transparent;
+	border: 1px solid transparent;
+	outline: none;
+}
+
+button.rounded {
+	border-radius: var(--p1)
+}
+
+button.rounded2 {
+	border-radius: var(--p2)
+}
+
+html .button { background-color: #ccc; }
+html .warn { background-color: #c00; }
+html .alert {  background-color: #ed0; }
+html .info {  background-color: #cec; }
+html .note {  background: #33c; }
 
 nav button { 
 	height: 28px;
@@ -272,4 +315,35 @@ padding: 0 .5rem; font-size: .8rem; }
 
 .b2 { background: #ccc; }
 .b2 > div { border: 1px solid #ccc; background: #fff; }
+
+.tab-nav {
+	display: flex;
+	flex-direction: row;
+	border-bottom: 1px solid var(--b3);
+	margin-bottom: var(--p2);
+}
+
+.tab-nav ul { padding: 0; list-type: none; margin: 0 var(--p2); }
+
+.tab-nav ul li { 
+list-type: none;
+width: auto; display: inline-flex; border: 1px solid var(--b4);
+border-bottom: none; 
+padding: 0 var(--p1)}
+
+.tab-nav ul li.active { 
+color: var(--bg);
+border: 1px solid var(--b2);
+background-color: var(--b3);
+}
+
+header h1 {
+	font-width:100;
+	text-align: center;
+}
+
+header {
+	background: #fc3;
+	margin-bottom: var(--p2);
+}
 

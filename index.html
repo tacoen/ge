@@ -8,34 +8,51 @@
 <script src='util.js'></script>
 <link rel="stylesheet" href="css/style.php?" type="text/css" media="all">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/eufemisme.css" type="text/css" media="all">
 <link rel="stylesheet" href="util.css" type="text/css" media="all">
 </head>
 </head>
 <body class='scrollable'>
 
-<div class='flex'>
+<div class='flex warp'>
+
+<header class='p-lg w100 ph2 pv2 ubg eufem grad'>
+<h1>Ge (骼)</h1>
+</header>
 
 <div class="w50 ph pv">
 
-<h1>Function</h1>
+<div class='tab-nav'>
+<ul>
+	<li data-tab='#tajsfunc' class='active'>jsfunc</li>
+	<li data-tab='#tauifunc' class=''>uifunc</li>	
+</ul>
+</div>
 
+<div class='tab-content mh2' style='display: block'>
+
+<div class='tab' id='tajsfunc'>
+
+<h2>ta</h2>
 <p>Use console.log to play</p>
-
+<pre>let ta = new TaJsFunc();</pre>
 
 <dl class='accordion'>
-
-<dt>Elementof</dt>
+<dt>ta.elementof</dt>
 <dd class='markdown'>
 ```
 ta.elementof('#test3')
 ```
-<div class='incode ph pv'>
-<div id=​"test3" data-set=​"321">​you have text not <i>html</i>​</div>​
-</div>
+</dd>
+<dt>ta.notempty</dt>
+<dd class='markdown'>
+```
+let e = ta.notempty(var)
+```
+return false if null, empty, undefined
 
 </dd>
-
-<dt>String Manipulation</dt>
+<dt>string manipulation</dt>
 <dd class='markdown'>
 
 ```
@@ -49,8 +66,7 @@ a.safestr(' [cobaan1 .,/?  {ok}  ')
 'cobaan1_ok'
 ```
 </dd>
-
-<dt>Sort</dt>
+<dt>ta.uniqsort</dt>
 <dd class='markdown'>
 ```
 ta.uniqsort.string(["1","0","20","30"])
@@ -67,8 +83,7 @@ ta.uniqsort.number([1,0,20,30],false)
 (4) [0, 1, 20, 30]
 ```
 </dd>
-
-<dt>LocalStorage</dt>
+<dt>ta.ls</dt>
 <dd class='markdown'>
 ```
 ta.ls.save('test',['lupe','lexi','bela'])
@@ -83,11 +98,8 @@ ta.ls.get('test')['bela']
 'vista'
 ```
 </dd>
-
-<dt>Get</dt>
+<dt>ta.get</dt>
 <dd class='markdown'>
-
-## get
 ```
 ta.get.value('#test3')
 null
@@ -101,51 +113,35 @@ ta.get.attr(document.getElementById('test3'),'data-set')
 '321'
 ```
 </dd>
-
-
-<dt>Set</dt>
-<dd>
-<div class='markdown'>
+<dt>ta.set</dt>
+<dd class='markdown'>
 ```
 ta.set.html('#test2',"you <b>bold</b> and <i>italic</i>")
 ta.set.text('#test3',"you have text not <i>html</i>")
 ta.set.attr('#test3','data-sample','anysample');
 ```
-</div>
-<div class='incode ph2 pv2'>
-<span id='test3' data-set='321' class='w1 s7'></span>
-</div>
+</dd>
+<dt>ta.fetch</dt>
+<dd class='markdown'>
 
-<dt>Fetch</dt>
-<dd>
+html, using data-fetch:
 
-using data-fetch:
-
+```
 <div class='incode ph'>
 <div data-fetch='./lorem.txt'></div>
 </div>
-
-<div class='markdown'>
+```
 
 Javascript:
 
 ```
 ta.fetch('#test','./lorem.txt')
 ```
-</div>
+
 
 </dd>
-
-
-<dt>class</dt>
-
-<dd>
-
-<div class='incode ph pv'>
-<div id='ct1'>Hi you!</div>
-</div>
-
-<div class='markdown'>
+<dt>ta.class</dt>
+<dd class='markdown'>
 ```
 ta.class.value('#ct1')
 'orange blue'
@@ -160,14 +156,97 @@ undefined
 ta.class.value('#ct3')
 'red'
 ```
-</div>
 </dd>
+<dt>ta.randomnumber</dt>
+<dd class='markdown'>
+```
+ta.randomnumber(n)
+```
+default n = 9999
+</dd>
+<dt>taicon</dt>
+<dd class='markdown'>
 
+See: <a href='icon-index.html'>Icon-index</a>
+
+javascript async:
+
+```
+taicon_delay();
+```
+
+javascript:
+
+```
+taicon_replace();
+```
+
+</dd>
 </dl>
+
+</div>
+<div class='tab hide' id='tauifunc'>
+
+<h2>t</h2>
+
+May the source be with you.
+
+<pre>let t = new TaUIFunc();</pre>
+
+<dl class='accordion'>
+<dt>t.htmlpart</dt>
+<dd class='markdown'>
+
+html: (&#8722; = minus)
+
+```
+<div id='htmlpart'>
+	<div index='x'><i data-icon='squared&#8722;cross'></i></div>
+</div>
+```
+
+javascript:
+
+```
+dt.innerHTML = dt.innerHTML + t.htmlpart('x');
+```
+</dd>
+<dt>t.button</dt>
+<dd class='markdown'>
+```
+ t.button(this.htmlpart('x'),
+		{ 'class': 'modal-close', 
+		  'onclick':'t.modalclose("'+eleid+'")' 
+		 }) 
+```
+</dd>
+<dt>t.modalclose</dt>
+<dd class='markdown'>
+```
+ t.button(this.htmlpart('x'),
+		{ 'class': 'modal-close', 
+		  'onclick':'t.modalclose("'+eleid+'")' 
+		 }) 
+```
+</dd>
+<dt>t.toggle</dt>
+<dd class='markdown'>
+```
+t.toggle(ele.getAttribute['data-toggle']);
+t.toggleclass(ele,'classname');
+```
+</dd>
+</dl>
+
 </div>
 
-<div class='w50 p-lg ph markdown' style='padding-bottom:3rem'>
+</div>
 
+</div>
+
+
+
+<div class='w50 p-lg ph markdown'>
 # tafunc test
 
 ## Markdown
@@ -175,33 +254,17 @@ ta.class.value('#ct3')
   * [dom](dom.html)
   * [icon-index](icon-index.html)
 
-## taicon (entypo)
-
-bakal tambah 130k
-
-<i data-icon='voicemail'></i>
-<i data-icon='user'></i>
-<i data-icon="ctl-paus"></i>
-
-
 # Fetch
 
 <div id='fetched'></div>
+</div>
+
+
+
+
 
 
 </div>
-
-</div>
-
-<hr>
-
-
-
-
-
-
-
-
 </div>
 
 <div id='htmlpart'>

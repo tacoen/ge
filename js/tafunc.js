@@ -266,7 +266,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
 	
 	var adl = document.querySelectorAll("dl.accordion"); adl.forEach((dl) => {
 
-		dl.querySelectorAll('dd').forEach( (dd) => { ta.class.add(dd,'hide'); });
+		dl.querySelectorAll('dd').forEach( (dd) => { 
+				ta.class.add(dd,'hide'); 
+		});
 		dl.querySelectorAll('dt').forEach( (dt) => { 
 			dt.innerHTML = dt.innerHTML + t.htmlpart('accordion_button');
 			ta.class.remove(dt,'active');
@@ -274,6 +276,27 @@ document.addEventListener("DOMContentLoaded", (e) => {
 				ta.class.toggle(dt,'active');
 				ta.class.toggle(dt.nextElementSibling,'hide')
 			})
+		});
+		
+	}); /* accordions */
+	
+	var tablis = document.querySelectorAll(".tab-nav li"); tablis.forEach((li) => {	
+
+		li.addEventListener('click', () => {
+			var target = ta.get.attr(li,'data-tab');
+
+			var te = ta.elementof(target);
+			console.log(te)
+			var pa = te.parentElement.querySelectorAll('.tab')
+
+			pa.forEach((tb) => {
+				ta.class.add(tb,'hide');
+			});
+			if ( ta.class.has(target,'hide') ) {
+				ta.class.remove(target,'hide')
+			} else {
+				ta.class.add(target,'hide')
+			}
 		});
 		
 	}); /* accordions */

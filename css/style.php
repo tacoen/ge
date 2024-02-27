@@ -49,11 +49,20 @@ e("html .label$i label + * { display: inline-flex; width: calc(100% - $i%) }",1)
 
 }
 
+$array=[];
+
 for ($i=1; $i <= 6; $i+=1) {
 
-e(".bg-b$i { background-color: var(--b$i); color: var(--bg) } ",1);
-e(".bg-w$i { background-color: var(--w$i); color: var(--fg) } ",1);
+	array_push($array,".bg-b$i { background-color: var(--b$i); color: var(--bg) } ");
+	array_push($array,".bg-w$i { background-color: var(--w$i); color: var(--fg) } ");
+	array_push($array,".b$i { border-color: var(--b$i) }");
+	array_push($array,".w$i { border-color: var(--w$i) }");
 	
 }
+
+sort($array);
+
+echo join("\n",$array);
+
 ?>
 
