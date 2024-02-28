@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charSet="utf-8" />
+<script src='js/taicon.js'></script>
+<script src='js/marked.min.js'></script>
+<script src='js/tafunc.js'></script>
+<script src='js/test.js'></script>
+<script src='util.js'></script>
+<link rel="stylesheet" href="css/style.php?" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="util.css" type="text/css" media="all">
+</head>
+<body topnav>
+
+<nav class='fix p-xs pv top left'>
+	<div>
+	<button data-toggle='aside.menu'><i data-icon='menu'></i><span>Menu</span></button>
+	</div>
+	<div class='reverse'>
+	<button href='index.html'><i data-icon='dots-3-v'></i><span>Option</span></button>
+	<button data-modal='#cobamodal'><i data-icon='book'></i><span>Manual</span></button>
+	</div>
+</nav>
+
+<aside class='hide menu fix left scrollable'>
+<ul>
+<li><a href='index.html'><i data-icon='new-message'></i>Test page</li></a></li>
+<li><a href='icon-index.html'><i data-icon='new-message'></i>Icon 1</li></a></li>
+<li><a href='ini'><i data-icon='new-message'></i>List 2</a></li></li>
+</ul>
+</aside>
+
+<main>
+
+<div class='flex warp s-ph s-pv dnd'>
+
+	<div class='w34 col1'>
+	<ul>
+	<li draggable="true" ondragstart="drag(event)">Satu</li>
+	<li draggable="true" ondragstart="drag(event)">Dua</li>
+	<li draggable="true" ondragstart="drag(event)">Dua1 <div>apapun itu</div></li>
+	<li draggable="true" ondragstart="drag(event)">Dua2</li>
+	<li draggable="true" ondragstart="drag(event)">Dua3</li>
+	<li draggable="true" ondragstart="drag(event)">tiga</li>
+	<li draggable="true" ondragstart="drag(event)">tiga1</li>
+	<li draggable="true" ondragstart="drag(event)">tiga2</li>
+	<li draggable="true" ondragstart="drag(event)">tiga3</li>
+	</div>
+
+	<div class='w33 col2'>
+	<ol ondrop="drop(event,'copy')" class='dropable' ondragover="allowDrop(event)">
+	</ol>
+	</div>
+
+	<div class='w33 col3'>
+	<ol ondrop="drop(event)" class='dropable' ondragover="allowDrop(event)">
+	</ol>
+	</div>
+	
+</div>
+
+
+</main>
+
+<div id='modal'>
+		<div class='full' id='cobamodal'>
+		<header>
+			<span class='modal-title'>Judul Windows</span>
+		</header>
+		<main class='scrollable' id='isian'></main>
+		<footer>
+		Statusnya
+		</footer>
+	</div>
+</div>
+
+<div id='htmlpart'>
+	<div index='x'><i data-icon='squared-cross'></i></div>
+	<div index='accordion_button'><i data-icon='chevron-small-down'></i><i data-icon='chevron-small-up'	></i></div>
+</div>
+
+
+</body>
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+
+
+
+	taicon_delay();
+
+});
+
+
+
+
+</script>
+</html>

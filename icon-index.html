@@ -37,14 +37,14 @@
 
 h1 { font-size: 5rem; margin-bottom:0; text-align:center }
 
-#temp { border: none; text-align: right; width:calc(50% - 1rem); outline: none; position: absolute; top: 1rem; right: 1rem; }
+#temp { border: none; text-align: right; width:calc(50% - 1rem); outline: none; position: absolute; top: 1rem; right: 1rem; background: transparent;}
 #temp::before { content: "code:"; color: #c00; }
 </style>
 </head>
 <body>
 
 <h1>ta-icon</h1>
-<input type='search' id='search' value='' onchange='search(this)' autocomplete='off'>
+<input type='search' id='search' value='' onchange='search(this)' onkeypress='search(this)'autocomplete='off'>
 <input type='text' id='temp' value=''>
 
 <div id='index-icon'>
@@ -56,9 +56,10 @@ h1 { font-size: 5rem; margin-bottom:0; text-align:center }
 <script>
 
 function search(obj) {
+
 		var key = obj.value;
 		var ndx = document.querySelector('#index-icon')	;
-		if (key.length >2) {
+		if (key.length >1) {
 			console.log(obj.value);
 
 			ndx.querySelectorAll('span').forEach( function (e) {

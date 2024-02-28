@@ -15,5 +15,6 @@
 xmp {
 	background:#ffeedd;
 	white-space: normal;
+	padding-bottom: var(--p2);
 }
 .coded { padding: 0 !important }

@@ -68,3 +68,17 @@ html .label75 label + * { display: inline-flex; width: calc(100% - 75%) }
 html .bo-l { border-width:3px; }
 html .bo-m { border-width:2px; }
 html .bo { border-width:1px; }
+
+.fg-bg { color: var(--bg); }
+.fg-b1 { color: var(--b1); } 
+.fg-b2 { color: var(--b2); } 
+.fg-b3 { color: var(--b3); } 
+.fg-b4 { color: var(--b4); } 
+.fg-b5 { color: var(--b5); } 
+.fg-b6 { color: var(--b6); } 
+.fg-w1 { color: var(--w1); } 
+.fg-w2 { color: var(--w2); } 
+.fg-w3 { color: var(--w3); } 
+.fg-w4 { color: var(--w4); } 
+.fg-w5 { color: var(--w5); } 
+.fg-w6 { color: var(--w6); }

@@ -5,6 +5,7 @@
 <script src='js/taicon.js'></script>
 <script src='js/marked.min.js'></script>
 <script src='js/tafunc.js'></script>
+<script src='js/test.js'></script>
 <script src='util.js'></script>
 <link rel="stylesheet" href="css/style.php?" type="text/css" media="all">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
@@ -32,8 +33,12 @@
 
 <main>
 
-<div class='flex warp s-ph s-pv'>
+
+</div><div class='flex warp s-ph s-pv'>
+
 	<div class='w40'>
+	<h2>CSS Utilities</h2>
+
 		<dl class='accordion'>
 			<dt>Color Gradient</dt>
 			<dd class='incode'>
@@ -160,7 +165,16 @@
 		</dl>
 	</div>
 	<div class='w60'>
+		<h2>UI Utilities</h2>
 		<dl class='accordion'>
+			<dt>Notice</dt>
+			<dd class='incode'>
+			<div onclick='t.dele(this)' class='msg'>You got 7 messages</div>
+			<div onclick='t.dele(this)' class='msg warn'>This is some warning</div>
+			<div onclick='t.dele(this)' class='msg alert'>This will alert you something</div>
+			<div onclick='t.dele(this)' class='msg info'>For your information</div>
+			<div onclick='t.dele(this)' class='msg note'>You noted</div>
+			</dd>
 			<dt>Navigation Bar</dt>
 			<dd class='incode'>
 				<nav class='pv'>
@@ -206,17 +220,7 @@
 		</dl>
 	</div>
 	
-	<div class='w33'>
-	33
-	</div>
 
-	<div class='w33'>
-	33
-	</div>
-
-	<div class='w33'>
-	34
-	</div>
 	
 	
 </div>

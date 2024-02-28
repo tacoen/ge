@@ -1,20 +1,40 @@
-class TaTest {
-  constructor() {
-    this.version = "0.1a";
-    this.ltm = Date.now();
-    this.host = window.location.pathname.toLowerCase().replace(/\W/g, "");
-    this.lsd = JSON.parse(localStorage.getItem(this.host));
-  }
+/* */
 
-  coba = {
-    f1: (param) => {
-      console.log(param);
-    },
-    f2: () => {
-      console.log(this.ltm);
-    }
-  };
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  
+  if (! ta.notempty(ev.target.id) ) {
+	  ev.target.id = ev.target.tagName +"_"+ev.target.innerText.substring(0,3)+"_"+ta.randomnumber();
+  }
+  ev.dataTransfer.setData("text",ev.target.id);
 
 }
 
-let tt = new TaTest();
+function drop(ev,w='move') {
+
+  var dt =  ev.dataTransfer;
+  dt.dropEffect = w;
+	
+  ev.preventDefault();
+  
+  //var obj = document.getElementById(ev.dataTransfer.getData("text"))
+ // console.log(ev.dataTransfer.dropEffect);
+  
+  if (w == 'copy') {
+	var obj = document.getElementById(ev.dataTransfer.getData("text")).cloneNode(true);
+  } else {
+	 var obj = document.getElementById(ev.dataTransfer.getData("text")) 
+  }
+  
+  if (ev.target.classList.contains('dropable')) {
+		ev.target.append(obj);
+  } else {
+	  var dropable = ev.target.closest('.dropable');
+	  var nexto = ev.target.closest(obj.tagName);
+	  dropable.insertBefore(obj,nexto)
+  }
+}
+

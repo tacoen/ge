@@ -33,6 +33,7 @@ select { height: 1.3rem; }
 	--p2: 1rem; 
 	--p3: 1.5rem;
 	--p4: 2rem;
+	
 	--fg: #212121;
 	--bg: #efefef;
 	--active: #f00;
@@ -51,6 +52,28 @@ select { height: 1.3rem; }
 	
 }
 
+[theme='dark'] {
+	a { color: #dc3; }
+	a:hover { color: #dc3; }
+}
+
+[theme='dark'] {
+	--bg: #212121;
+	--fg: #efefef;
+	--active: #0c0;
+	--w1: #0002;
+	--w2: #0004;
+	--w3: #0006;
+	--w4: #0008;
+	--w5: #000a;
+	--w6: #000c;
+	--b1: #fff2;
+	--b2: #fff4;
+	--b3: #fff6;
+	--b4: #fff8;
+	--b5: #fffa;
+	--b6: #fffc;
+}
 
 html {
 	font-family: var(--fontStack-sansSerif);
@@ -195,7 +218,13 @@ html .button { background-color: #ccc; }
 html .warn { background-color: #c00; }
 html .alert {  background-color: #ed0; }
 html .info {  background-color: #cec; }
-html .note {  background: #33c; }
+html .note {  background-color: #33c; }
+
+html .msg { padding: var(--p1) var(--p2); border: 1px solid var(--b2); }
+html .msg.warn { background-color: #c006; }
+html .msg.alert {  background-color: #ed06; }
+html .msg.info {  background-color: #cec6; }
+html .msg.note {  background-color: #33c6; }
 
 nav button { 
 	height: 28px;
@@ -285,6 +314,7 @@ dl.accordion dt.active .chevron-small-down { display: none; }
 dl.accordion dt {margin: 0;background: var(--b1);cursor: pointer;padding: var(--p1);border-bottom: 1px solid var(--b2);border-top: 1px solid var(--w2);}
 dl.accordion dd {margin: 0;border: 1px solid var(--b1);border-top: none;padding: var(--p1);}
 
+dl.accordion dd header {  }
 
 body.modal-layer .layer { z-index: 1; background: var(--w5); 
 position: fixed; top: 0; left:0; width:100%; height: 100%;  
@@ -330,11 +360,7 @@ padding: 0 .5rem; font-size: .8rem; }
 
 .tab-nav ul { padding: 0; list-type: none; margin: 0 var(--p2); }
 
-.tab-nav ul li { 
-list-type: none;
-width: auto; display: inline-flex; border: 1px solid var(--b4);
-border-bottom: none; 
-padding: 0 var(--p1)}
+.tab-nav ul li {list-style: none;width: auto;display: inline-flex;border: 1px solid var(--b4);border-bottom: none;/* padding: 0 var(--p1); */}
 
 .tab-nav ul li.active { 
 color: var(--bg);
@@ -343,12 +369,43 @@ background-color: var(--b3);
 }
 
 header h1 {
-	font-width:100;
+	font-weight:100;
 	text-align: center;
 }
 
 header {
-	background: #fc3;
+	background-color: var(--b2);
 	margin-bottom: var(--p2);
 }
 
+.bo  { border: 1px solid transparent; }
+.bo.bo-top { border-top: 1px solid var(--b5) }
+.bo.bo-bottom { border-bottom:1px solid var(--b5) }
+
+.bo.solid { border-style: solid; }
+.bo.dash { border-style: dashed; }
+.bo.dot { border-style: dotted; }
+
+button.dark { color: var(--fg); }
+button .adjust-2 { transform: rotate(45deg); }
+button .light { display: inline-block }
+button .dark  { display: none; }
+
+button.dark>.light { display: none; }
+button.dark>.dark { display: inline-block; }
+
+.reverse { flex-direction: row-reverse; }
+
+button.wtext svg { margin-right: .5rem; margin-left:0 }
+button.wtext.reverse svg { margin-left: .5rem; margin-right: 0 }
+
+.dnd ol,
+.dnd ul {
+	padding: 1rem;
+	border: 1px dotted #c00;
+	width: 100%;
+	min-height: 6rem;
+}
+
+.dnd li { background: #ccc; margin:1rem; }
+.dnd .over { outline: 2px solid blue; }

@@ -11,12 +11,11 @@
 <link rel="stylesheet" href="css/eufemism.css" type="text/css" media="all">
 <link rel="stylesheet" href="util.css" type="text/css" media="all">
 </head>
-</head>
 <body class='scrollable'>
 
 <div class='flex warp'>
 
-<header class='p-lg w100 ph2 pv2 ubg eufem grad'>
+<header class='p-lg w100 ph2 pv2 fg-fg eufem'>
 <h1>Ge (骼)</h1>
 </header>
 
@@ -24,8 +23,8 @@
 
 <div class='tab-nav bo-m'>
 <ul>
-	<li data-tab='#tajsfunc' class='active'>jsfunc</li>
-	<li data-tab='#tauifunc' class=''>uifunc</li>	
+	<li data-tab='#tajsfunc' class='pv1 ph2 active'>jsfunc</li>
+	<li data-tab='#tauifunc' class='pv1 ph2'>uifunc</li>	
 </ul>
 </div>
 
@@ -258,19 +257,26 @@ t.toggleclass(ele,'classname');
 
 </div>
 
-
-
 <div class='w50 p-lg ph markdown'>
 
 # tafunc test
 
-  * [dom](dom.html)
+  * [dashboard](dom.html)
+  * [animated](anim.html)
+  * [drag-n-drop](dnd.html)  
   * [icon-index](icon-index.html)
-
+  
 ## svg
 
 * taicon base on entypo svg
 * eufemism is collection of svg css3 background
+
+<button onclick='t.theme_switch(this)' class='ph pv p-md wtext reverse naked'>
+	<i class='dark' data-icon='adjust-2'></i>
+	<i class='light' data-icon='light-up'></i>
+	<span>Theme</span>
+</button>
+
 
 ## Markdown
 
@@ -286,9 +292,12 @@ marked.min.js included
 
 
 
+</div>
+</div>
 
-</div>
-</div>
+<footer class='text-center p-lg pv2 ph2 fg-b6 bo dot bo-top'>
+Ge (骼) was created because we lazy.
+</footer>
 
 <div id='htmlpart'>
 	<div index='x'><i data-icon='squared-cross'></i></div>

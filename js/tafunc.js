@@ -8,8 +8,9 @@ class TaJsFunc {
 		this.ckies = JSON.parse(localStorage.getItem("ckies")) || {};
 	};
 
-	randomnumber(l=9999) {
-		return Math.floor(Math.random() * (l - l+1)) + 1000;
+	randomnumber(minVal=1000,maxVal=9999) {
+		var randVal = minVal+(Math.random()*(maxVal-minVal));
+		return Math.round(randVal);		
 	};
 
 	notempty(w) {
@@ -184,7 +185,23 @@ class TaUIFunc {
 	constructor() {
 		const ta = new TaJsFunc();
 	};
-
+	
+	theme_switch(obj) {
+		var h = document.getElementsByTagName('html')[0]
+		var t = h.getAttribute('theme') || false
+		if (t == 'dark') {
+			h.setAttribute('theme','light')
+			ta.class.remove(obj,'dark')
+		} else {
+			h.setAttribute('theme','dark')
+			ta.class.add(obj,'dark')
+		}
+	};
+	
+	dele(obj) {
+		obj.remove();
+	}
+	
 	toggle(obj) {
 		var ele = ta.elementof(obj)
 		if (ta.class.has(ele,'hide') ) {
