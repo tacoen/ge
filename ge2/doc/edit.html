@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenteditable Storage Demo</title>
+  <style>
+    [contenteditable] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contenteditable Storage Demo</h1>
+<pre>
+create javascript class that will store every element contenteditable innerHTML into localstorage, each contenteditable element must has unique name, that can be used to retrieve it back from localstorage. 
+
+get the name from 'name' attribute, if there is no unique name, give it using its tagname + randomstring
+
+
+for local storage, get pathname from url and use it as container
+```
+this.lsdata = JSON.parse(localStorage.getItem(this.pathname));
+return JSON.parse(this.lsdata[element.name]);
+```
+contenteditable are stored when changed
+</pre>
+
+  <h2>Editable Paragraph</h2>
+  <p contenteditable="true" name="paragraph-1">This is an editable paragraph. Try editing the text and refreshing the page.</p>
+
+  <h2>Editable Heading</h2>
+  <h3 contenteditable="true" name="heading-1">This is an editable heading.</h3>
+
+  <h2>Editable List</h2>
+  <ul>
+    <li contenteditable="true" name="list-item-1">First list item</li>
+    <li contenteditable="true" name="list-item-2">Second list item</li>
+    <li contenteditable="true" name="list-item-3">Third list item</li>
+  </ul>
+
+  <script>
+    // Import the ContentEditableStorage class
+class ContentEditableStorage {
+  constructor() {
+    this.pathname = window.location.pathname;
+    this.lsdata = JSON.parse(localStorage.getItem(this.pathname)) || {};
+  }
+
+  saveContent() {
+    const editableElements = document.querySelectorAll('[contenteditable]');
+    editableElements.forEach((element) => {
+	  console.log('nn',element.getAttribute('name'));
+      const name = element.getAttribute('name') || `${element.tagName.toLowerCase()}-${this.generateRandomString(8)}`;
+      this.lsdata[name] = JSON.stringify(element.innerHTML);
+      localStorage.setItem(this.pathname, JSON.stringify(this.lsdata));
+    });
+  }
+
+retrieveContent() {
+  for (const name in this.lsdata) {
+    const element = document.querySelector(`[name="${name}"]`);
+    if (element) {
+      element.innerHTML = JSON.parse(this.lsdata[name]);
+    }
+  }
+}
+
+  generateRandomString(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+  }
+}
+
+// Usage:
+const contentEditableStorage = new ContentEditableStorage();
+
+// Save content when elements are changed
+const editableElements = document.querySelectorAll('[contenteditable]');
+editableElements.forEach((element) => {
+  element.addEventListener('input', () => {
+    contentEditableStorage.saveContent();
+  });
+});
+
+// Retrieve content when the page loads
+contentEditableStorage.retrieveContent();
+
+  </script>
+</body>
+</html>

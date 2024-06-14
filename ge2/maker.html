@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charSet='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>	
+<script type='text/javascript' src='js/icons.js'></script>
+<script type='text/javascript' src='js/tafunc.js'></script>
+<script type='text/javascript' src='js/addition.js'></script>
+<script type='text/javascript' src='doc/func.js'></script>
+<script type='text/javascript' src='js/marked.min.js'></script>
+<script type='text/javascript' src='maker.js'></script>
+<link rel='stylesheet' href='css/ge-new.css' type='text/css' media='all'>
+<link rel='stylesheet' href='css/eufemisme.css' type='text/css' media='all'>
+<link rel='stylesheet' href='style.css' type='text/css' media='all'>
+<title>ge2 maker</title>
+</head>
+<body>
+
+<nav topnav class='flex'>
+
+<a data-toggle='#sitemenu' class='favicon'><img src='/favicon.ico'></a>
+
+<div class='flex middle right'>
+	<button onclick='ta.theme_switch(this)' data-theme='light' class='themeswitcher naked'>
+	<i class='dark' data-icon='adjust-2'></i>
+	<i class='light' data-icon='adjust'></i>
+	</button>
+
+</div>
+</nav><!--topnav-->
+<div id="sitemenu" class="hide">
+<button class="naked closer" data-toggle="#sitemenu">
+<i data-icon="cross"></i>
+</button>
+<header>
+<h1 class="red fg">Ge(骼) 2.0</h1>
+</header>
+<div class="flex w100 container sitemenu" data-fetch="_sitemenu.html"></div>
+</div>
+
+<div class='w100'>
+		
+
+<div id='toc'>
+	<h5>On this Page</h5>
+	<div class='toc'>
+	</div>
+</div>
+
+<main container class='w80 pl3 pr3 pt0 tocindex'>
+
+	<h1>Ge2 Maker</h1>
+	<p>This will help you kickstarted and customize.</p>
+
+	<h2>php</h2>
+	<p><a href='doc/phpdoc.php'>Read Doc</a> for php.</p>
+
+	<xmp class='phpconfig'>require_once('ge/traits.php');
+require_once('ge/skel.php');
+require_once('ge/html.php');
+require_once('ge/sqlitev2.php');
+$ge = new GE_html();
+//sqlite3
+$sqlite = new GE_SQLite3Interface('path/to/database.db');
+$users = $sqlite->users;
+// GE Skeleton
+$ge->structure();
+echo $ge->html;</xmp>
+	
+	<h2>HTML Template</h2>
+	<xmp class='head_clone'></xmp>
+
+	<h2>Javascript DOM </h2>
+	<xmp class='jsdom'>document.addEventListener("DOMContentLoaded", function() {
+	let ena = new taLoad();
+	ena.modal();	
+	ena.toggle();	
+	ena.scrollfix();
+	ena.accordion();
+	ena.markdown();
+	ta.generateTOC();
+	ta.mediaWidth();
+	});</xmp>
+
+	<h2>Minified / Pack</h2>
+
+	<p>To add more files you can edit the <code>head</code>, 
+		the script will collect css and js, and Use validator to check the output. 
+		The generated minified files can be tested at <a href="cache/test.html">Test Page</a></p>
+
+	<p>Using <a href="https://github.com/matthiasmullie/minify">matthiasmullie/minify</a>
+
+</main>
+
+</div>
+	
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+ta.fetch('#sitemenu .container');
+
+document.querySelector('xmp.head_clone').innerHTML =
+	"<!DOCTYPE html>\n<html lang='en-US'>\n"+
+	document.querySelector('head').outerHTML.replace(/\n\s+\n/,'') +"\n" +
+	"<body>\n</body>\n" +
+	"</html>";
+
+ta.mediaWidth();
+
+precancopy('xmp');
+
+packFiles();
+taicon.delay();
+
+});
+
+</script>
+
+</body>
+</html>

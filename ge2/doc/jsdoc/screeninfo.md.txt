@@ -1,0 +1,44 @@
+# Get Screen info
+
+```
+const screenInfo = new ge_ScreenInfo();
+```
+
+## Info
+
+Accessing the screen and window properties:
+
+```
+console.log(`Screen width: ${screenInfo.screenWidth}`);
+console.log(`Window width: ${screenInfo.windowWidth}`);
+console.log(`Pixel ratio: ${screenInfo.pixelRatio}`);
+```
+
+### List Properties
+
+ * screenWidth     
+ * screenHeight    
+ * windowWidth     
+ * windowHeight    
+ * pageHeight      
+ * pageWidth       
+ * pixelRatio      
+ * colorDepth      
+ * orientation     
+ * scrollbarWidth  
+
+
+## Using the table() method:
+This will log a table to the console with all the properties and their values.
+```
+screenInfo.table();
+```
+
+## Using the getElementInfo() method:
+
+```
+const headerInfo = screenInfo.getElementInfo('#header');
+console.log(`Header width: ${headerInfo.width}`);
+console.log(`Header height: ${headerInfo.height}`);
+```
+
