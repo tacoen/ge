@@ -34,83 +34,102 @@
             <div class="flex w100 container sitemenu" data-fetch="../_sitemenu.html"></div>
         </div>
         <!--sitemenu-->
-        <div class="w100 pa flex">
+        <div class="w100 pa">
+            <h1>HTML Form</h1>
+            <div class="w100 flex">
+                <form class='w33  pr3'>
+                    <h2>HTML5 Form Validation</h2>
+                    <p>All sample form using html5 required.</p>
+                    <p>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </p>
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    <p>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required minlength="8" maxlength="20">
+                    </p>
+                    <p>
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" required min="18" max="100">
+                    </p>
+                    <p>
+                        <label for="website">Website:</label>
+                        <input type="url" id="website" name="website" required>
+                    </p>
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                </form>
+                <form class='w33 pr3'>
+                    <h2>Formal Form</h2>
+                    <p>form.formal</p>
+                    <div class='formal'>
+                        <p>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name2" name="name" required>
+                        </p>
+                        <p>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email2" name="email" required>
+                        </p>
+                        <p>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password2" name="password" required minlength="8" maxlength="20">
+                        </p>
+                        <p>
+                            <label for="age">Age:</label>
+                            <input type="number" id="age2" name="age" required min="18" max="100">
+                        </p>
+                        <p>
+                            <label for="website">Website:</label>
+                            <input type="url" id="website2" name="website" required>
+                        </p>
+                        <p>
+                            <button type="submit">Submit</button>
+                        </p>
+                    </div>
+                </form>
+                <form class='w33 pr3'>
+                    <h2>Inline Form</h2>
+                    <p>form > .inline</p>
+                    <div class='inline'>
+                        <p>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email3" name="email" required>
+                        </p>
+                        <p>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password3" name="password" required minlength="8" maxlength="20">
+                        </p>
+                        <p>
+                            <button class='small' type="submit">Submit</button>
+                        </p>
+                    </div>
+                    <h2>Form full</h2>
+                    <p>form > .full</p>
+                    <div class='full'>
+                        <p>
+                            <label for="password">textarea</label>
+                            <textarea maxlength="120" required></textarea>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
 
-  <form class='w33'>
-    <h2>HTML5 Form Validation</h2>
-   <p>form using html5 required.</p>
-    <p>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-    </p>
+                ta.fetch('#sitemenu .container');
+                ta.mediaWidth();
 
-    <p>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-    </p>
+                taicon.delay();
 
-    <p>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required minlength="8" maxlength="20">
-    </p>
-
-    <p>
-      <label for="age">Age:</label>
-      <input type="number" id="age" name="age" required min="18" max="100">
-    </p>
-
-    <p>
-      <label for="website">Website:</label>
-      <input type="url" id="website" name="website" required>
-    </p>
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <form class='w33 formal'>
-    <h2>HTML5 Form Validation</h2>
-   <p>form using html5 required.</p>
-    <p>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-    </p>
-
-    <p>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-    </p>
-
-    <p>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required minlength="8" maxlength="20">
-    </p>
-
-    <p>
-      <label for="age">Age:</label>
-      <input type="number" id="age" name="age" required min="18" max="100">
-    </p>
-
-    <p>
-      <label for="website">Website:</label>
-      <input type="url" id="website" name="website" required>
-    </p>
-
-    <button class='small' type="submit">Submit</button>
-
-  </form>
-		
-		</div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-
-ta.fetch('#sitemenu .container');
-ta.mediaWidth();
-precancopy('xmp');
-taicon.delay();
-
-});
-
-</script>
+            });
+        </script>
     </body>
 </html>
-</script></html>		
+</script></html>

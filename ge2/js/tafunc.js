@@ -88,6 +88,44 @@ class TaJSFunc {
 			// or throw the error
 		}
 	};
+
+	json_submit(data,url='json.php') {
+		//console.log(data);
+		return (async () => {
+			const rawResponse = await fetch(url+'?'+ta.ltm, {
+				method: 'POST',
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(data)
+			});
+		const res = await rawResponse.json();
+		//console.log( res);
+		return res;
+		})();
+	}	
+
+	contentedit_json(id,chain=false) {
+		var sre = ta.elementof(id);
+		let data={}
+		sre.querySelectorAll('[contenteditable]').forEach(
+			(s)=>{
+				var el_name = s.getAttribute('name');
+				if (! this.notempty(el_name)) {
+					el_name = sre.id+"_"+s.tagName.toLowerCase()+"_"+this.rndnum();
+					console.log('contentedit_json require name, so random: '+el_name )
+					s.setAttribute('name', el_name); 
+				}
+				data[el_name] = s.innerHTML;
+			}
+		);
+
+		this.json_submit(data,sre.dataset.post);
+
+	}
+
+	
 	attr_array(e) {
 		const aa = [...this.elementof(e).attributes];
 		const attrs = aa.reduce((attrs, attribute) => {
