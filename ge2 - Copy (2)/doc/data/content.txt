@@ -1,1 +1,0 @@
-{"jsondemo_div_7648":"a thing","bernama":"another thing as text"}
