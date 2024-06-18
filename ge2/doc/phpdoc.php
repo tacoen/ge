@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {?>
 <html lang="en">
     <head>
         <meta charSet="utf-8"/>
-        <script src='../js/icons.js'></script>
+        <script src='../js/entypo.js'></script>
         <script src='../js/tafunc.js'></script>
 		<script src='func.js'></script>
 		<link rel="stylesheet" href="../css/ge-new.css" type="text/css" media="all">

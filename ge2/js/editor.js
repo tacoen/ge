@@ -1,7 +1,5 @@
 TaUIFunc.prototype.editor = function(what) {
-    
     const editor = document.querySelector(what);
-
     this.applyHeading = function(level) {
       const selectedText = window.getSelection().toString();
       if (selectedText) {
@@ -11,12 +9,10 @@ TaUIFunc.prototype.editor = function(what) {
       }
     }    
 }
-
 TaUIFunc.prototype.RightClickMenu = function(targetElement, menuOptions) {
     const menu = document.createElement('ul');
     menu.id = 'right-click-menu';
     menu.classList.add('right-click-menu');
-
     menuOptions.forEach(option => {
         const li = document.createElement('li');
         const optionLink = document.createElement('a');
@@ -32,12 +28,9 @@ TaUIFunc.prototype.RightClickMenu = function(targetElement, menuOptions) {
         li.appendChild(optionLink);
         menu.appendChild(li);
     });
-
     document.querySelectorAll(targetElement + ' >*').forEach(target => {
         target.addEventListener('contextmenu', event => {
             event.preventDefault();
-            console.log(target,event.pageX, event.pageY);
-            
             const element = target;//getNearestElement(event.pageX, event.pageY);
             const range = document.createRange();
             range.selectNodeContents(element);
@@ -46,42 +39,34 @@ TaUIFunc.prototype.RightClickMenu = function(targetElement, menuOptions) {
             selection.addRange(range);
             showMenu(event.pageX, event.pageY);
         });
-
         document.addEventListener('click', event => {
             if (!menu.contains(event.target)) {
                 hideMenu();
                 target.removeEventListener('contextmenu', dummy);
             }
         });
-
         menu.addEventListener('blur', () => {
             hideMenu();
             target.removeEventListener('contextmenu', dummy);
         }, true);
-
         function showMenu(x, y) {
             y = 10 + y - document.querySelector('[topnav]').offsetHeight;
             menu.style.display = 'flex';
             menu.style.left = x + 'px';
             menu.style.top = y + 'px';
-            console.log(x, y);
         }
-
         function removeMenu() {
             menu.classList.add('hide');
             target.removeEventListener('contextmenu', showMenu);
         }
-
         function hideMenu() {
             menu.style.display = 'none';
         }
-
         document.body.appendChild(menu);
         taicon.delay();
     });
 };
-
-function getNearestElement(x, y) {
+TaUIFunc.prototype.getNearestElement= function(x, y) {
     const elements = document.elementsFromPoint(x, y);
     console.log('near',elements);
     return elements.length > 0 ? elements[0] : null;

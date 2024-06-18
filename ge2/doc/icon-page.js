@@ -2,7 +2,7 @@ function search(obj) {
 
     var key = obj.value;
     var ndx = document.querySelector('#index-icon');
-    if (key.length > 2) {
+    if (key.length >= 2) {
         ndx.querySelectorAll('span').forEach(function(e) {
             if (e.children[1].innerText.includes(key)) {
                 e.style.display = 'flex'

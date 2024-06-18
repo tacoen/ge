@@ -8,7 +8,6 @@
     color: #fff;
     height: 105px;
 }
-
 #sitemenu {
     padding: .5rem;
     width: 60%;
@@ -25,19 +24,16 @@
     transition: all .5s .1s ease;
     z-index: 16;
 }
-
 #sitemenu.hide {
     position: absolute;
     left: -100%;
     top: 0;
 }
-
 .sitemenu ul {
     margin: 0 0 1rem 0;
     padding: 0;
     list-style-type: none;
 }
-
 .sitemenu ul li {
     line-height: 1.5;
     display: flex;
@@ -46,51 +42,41 @@
     align-items: center;
     font-size: .8em;
 }
-
 html .onpage .w33 {
     width: 100%;
 }
-
 html .onpage h5 {
     margin-bottom: 1rem
 }
-
 .sitemenu ul li span {
     color: var(--b4);
     display: inline-flex;
     align-items: center;
 }
-
 .sitemenu ul li a {
     flex-grow: 1;
     text-transform: capitalize;
 }
-
 .sitemenu a {
     text-decoration: none;
     color: currentcolor;
     display: inline-flex;
     align-items: center;
 }
-
 .sitemenu {
     counter-reset: sec;
 }
-
 .sitemenu ul {
     counter-reset: lnk;
     counter-increment: sec;
 }
-
 .sitemenu li {
     counter-increment: lnk;
     justify-content: flex-start
 }
-
 .sitemenu.onpage {
     width: 100%;
 }
-
 .sitemenu.onpage li:before {
     color: var(--red);
     font-size: .75em;
@@ -100,32 +86,26 @@ html .onpage h5 {
     align-items: center;
     line-height: 1.3;
 }
-
 .sitemenu .container > div {
     padding-right: 2rem;
 }
-
 .sitemenu .container > div h5 {
     padding-bottom: .5rem;
     margin-bottom: .5rem;
     border-bottom: 1px solid var(--b4);
 }
-
 button.closer {
     right: 0;
     top: 0;
     position: absolute;
 }
-
 .sitemenu header h1 {
     font-weight: 100;
     margin: 0 0 2rem 0
 }
-
 #clone_sitemenu:empty {
     background: #ccc;
 }
-
 #index-icon {
     display: flex;
     flex-wrap: wrap;
@@ -134,7 +114,6 @@ button.closer {
     border-top: 1px solid var(--b1);
     border-left: 1px solid var(--b1);
 }
-
 #index-icon span {
     display: flex;
     width: calc(100% / 12);
@@ -145,21 +124,17 @@ button.closer {
     border-bottom: 1px solid var(--b1);
     border-right: 1px solid var(--b1);
 }
-
 #index-icon span:hover {
     background: #f4f9fc;
     cursor: pointer;
 }
-
 #index-icon span:hover svg {
     fill: #a00;
 }
-
 #index-icon span svg {
     width: 48px;
     height: 48px;
 }
-
 #index-icon span b {
     display: block;
     margin-top: .5rem;
@@ -167,27 +142,22 @@ button.closer {
     font-weight: normal;
     font-size: .8rem;
 }
-
 #search {
     width: calc(100% - 2rem);
     line-height: 2;
     font-family: monospace;
 }
-
 #temp {
     background-color: var(--bg);
     width: 320px;
-    height: 180px;
-    border: 1px solid var(--b4);
-    display: flex;
+    height: 200px;
+    /* display: flex; */
     position: fixed;
-    top: .75rem;
-    padding: .5rem;
-    left: 71%;
+    left: 66%;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 16;
 }
+#temp h5 { text-align: center; margin-bottom: 1rem; }
 
 div.preview {
     width: 100%;
@@ -197,55 +167,45 @@ div.preview {
     align-items: center;
     flex-wrap: nowrap;
 }
-
 div.preview span {
     margin: .5rem
 }
-
 div.preview .s1 svg {
     width: 20px;
     height: 20px;
 }
-
 div.preview .s2 svg {
     width: 32px;
     height: 32px;
 }
-
 div.preview .s3 svg {
     width: 48px;
     height: 48px;
 }
-
 div.preview .s4 svg {
     width: 48px;
     height: 48px;
     fill: var(--magenta);
     stroke: none;
 }
-
 #temp input.code {
     width: 100%;
     height: 2rem;
     line-hieght: 2;
 }
-
 .icons-panel {
     width 65%; padding-left: 1rem;
 }
-
 .boxes {
     display: flex;
     flex-direction: column;
     width: calc(32px * 19 + 5rem + (19 * 2px);
     ) }
-
 .boxes .c {
     display: flex;
     flex-row: row;
     margin-bottom: 2px;
 }
-
 .boxes .c::after {
     content: attr(class);
     color: var(--color);
@@ -256,7 +216,6 @@ div.preview .s4 svg {
     justify-content: center;
     align-items: center;
 }
-
 .boxes div > div {
     display: flex;
     justify-content: center;
@@ -268,27 +227,22 @@ div.preview .s4 svg {
     font-size: .9rem;
     margin: 0 1px;
 }
-
 .bgr {
     display: flex;
     flex-row: row;
 }
-
 .bgr > div {
     padding: 1rem;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
 }
-
 .bgr > div::before {
     content: attr(class);
 }
-
 .coldemo .row {
     display: flex;
 }
-
 .coldemo .row div {
     margin: 1px;
     background: #ddd;
@@ -297,28 +251,23 @@ div.preview .s4 svg {
     justify-content: center;
     align-items: center;
 }
-
 .coldemo .row div:nth-child(odd) {
     background-color: #ccc;
 }
-
 .msg::before, .coldemo .row div::before {
     content: attr(class);
 }
-
 .typograph > div > p:after {
     content: " ---" attr(class);
     font-size: 1rem;
     ; color: var(--b3);
 }
-
 /* doc.css */
 p.details {
     display: flex;
     width: 100%;
     margin: .5rem 0;
 }
-
 p.details b {
     display: inline-flex;
     min-width: 20%;
@@ -326,35 +275,29 @@ p.details b {
     padding-right: 1rem;
     justify-content: flex-end;
 }
-
 p.details span {
     margin-right: 2rem;
 }
-
 pre {
     border: 1px solid var(--b3);
     padding: .5rem;
     font-size: 1rem;
     white-space: pre-wrap;
 }
-
 .content pre {
     transition: background 1s 0 linear;
     position: relative;
 }
-
 body {
     margin: 44px 0 0 0;
     padding: 0;
 }
-
 .container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
 .sidebar {
     width: 16%;
     padding: 1rem;
@@ -365,7 +308,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
-
 #toc {
     width: 18%;
     padding: .5rem .5rem;
@@ -374,31 +316,25 @@ body {
     height: 84vh;
     overflow-y: auto;
 }
-
 #toc {
     position: fixed;
     right: 1%;
     top: calc(44px + 1rem);
 }
-
 .cssupage #toc {
     border: none
 }
-
 #toc h5 {
     margin-bottom: 1em;
 }
-
 .content {
     width: 80%;
     padding: .5rem .5rem 3rem 2rem;
 }
-
 body.doc .content {
     width: 63%;
     margin-left: 16%;
 }
-
 .toc ul, .sidebar ul {
     list-style-type: none;
     margin: 0;
@@ -409,44 +345,36 @@ body.doc .content {
     flex-grow: 1;
     justify-content: flex-start;
 }
-
 .toc ul li, .sidebar ul li {
     padding: .25em 0;
     border-bottom: 1px solid #999;
     font-size: .8em;
 }
-
 .toc a, .sidebar a {
     text-decoration: none;
     color: currentcolor;
 }
-
 h1 {
     margin-top: 0;
     font-weight: 100;
 }
-
 h2 {
     border-top: 1px solid #ccc;
     padding-top: .5rem;
     margin-top: 3rem;
 }
-
 .toc li {
     padding: .25rem 0;
 }
-
 .icon-page {
     flex-flow: column
 }
-
 #index-icon {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     margin: 1rem;
 }
-
 #index-icon span {
     display: flex;
     width: calc(100% / 8);
@@ -455,21 +383,17 @@ h2 {
     align-items: center;
     justify-content: center;
 }
-
 #index-icon span:hover {
     background: #eee;
     cursor: pointer;
 }
-
 #index-icon span:hover svg {
     fill: red
 }
-
 #index-icon span svg {
     width: 32px;
     height: 32px;
 }
-
 #index-icon span b {
     display: block;
     margin-top: .5rem;
@@ -477,72 +401,58 @@ h2 {
     font-weight: normal;
     font-size: .8rem;
 }
-
 .dnd {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
 }
-
 .dnd .over {
     outline: 2px solid blue;
 }
-
 .dnd li {
     background: var(--b1);
     margin: .5rem;
 }
-
 .dnd > div {
     border: 1px dotted #c00;
 }
-
 .dnd ul {
     list-style-type: none;
 }
-
 .dnd ol, .dnd ul {
     padding: .5rem;
     width: 100%;
     min-height: 100%;
 }
-
 .dnd ol {
     padding-left: 1.25rem;
 }
-
 .taicon.traffic-cone {
     fill: orange;
 }
-
 .taicon.feather {
     fill: none;
     stroke: green
 }
-
 .taicon[class*='cc'] {
     fill: gray
 }
-
 #search {
     width: calc(100% - 2rem);
     line-height: 2;
     font-family: monospace;
     margin: 1rem;
 }
-
 h1.icons {
     font-size: 5rem;
     margin-bottom: 0;
     text-align: center
 }
-
 .incode:hover {
     outline: 1px dotted var(--red);
     position: relative;
 }
-
 .incode:hover:before {
     position: absolute;
     right: 0;
@@ -554,24 +464,19 @@ h1.icons {
     color: var(--bg);
     cursor: pointer;
 }
-
 [theme='dark'] xmp {
     background: #131110;
 }
-
 .coded {
     padding: 0 !important
 }
-
 p.note {
     font-size: .7rem;
     margin-bottom: 3rem;
 }
-
 .docblock {
     margin-bottom: 4rem;
 }
-
 .color-inputs div {
     font-size: .8em;
     line-height: 1.2;
@@ -582,14 +487,12 @@ p.note {
     flex-wrap: wrap;
     width: 8em;
 }
-
 .color-inputs p {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin: 0 .5em .125em 0;
 }
-
 .color-inputs input {
     height: 1.5rem;
     width: 2rem;
@@ -599,7 +502,6 @@ p.note {
     margin-right: .5rem;
     background: transparent;
 }
-
 #css-styles {
     height: 100%;
     width: 100%;
@@ -607,62 +509,91 @@ p.note {
     padding: .5rem
 }
 
+p.esta {display: flex;justify-content: space-between;}
+
+p.esta label {text-align: left;display: flex;justify-content: flex-start;flex-grow:1; margin-left: .5em; }
+p.esta .fz { font-size: .8em; color: var(--b5); }
 [theme='dark'] .drawer {
     background: var(--f1);
 }
-
 .drawer {
-    position:absolute;
+    position: absolute;
     background: var(--b1);
-    z-index: 10;
+    z-index: 16;
     padding: var(--pad);
-    border: 1px solid var(--b2);
+    border: 1px solid var(--b3);
+    transition: left 0.25s ease-in-out;
+}
+.drawer.left {
     border-right: 1em solid var(--orange);
     border-top-right-radius: .5em;
     border-bottom-right-radius: .5em;
-    transition: left 0.25s ease-in-out;
 }
-
-.drawer::after {
+.drawer.top {
+    border-bottom: 1em solid var(--orange);
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
+}
+/* https://oinam.github.io/entities/ */
+.drawer.left::after {
     content: "\00BB";
     position: absolute;
     right: -.9rem;
     top: 1%;
 }
-
+.drawer.left.active::after {
+    content: "\00AB";
+}
+.drawer.top::after {
+    content: "\2026";
+    position: absolute;
+    left: 50%;
+    bottom: -.8em;
+}
 .drawer.w55.left {
     left: calc(-55% + 1em);
 }
-
 .drawer.active.left {
-    left:0 !important;
+    left: 0 !important;
 }
-
-.drawer pre { background: var(--bg) }
-
+.drawer.top {
+    top: calc(-200px + 1em);
+}
+.drawer.active.top {
+    top: 0;
+}
+.drawer .color-inputs label {
+    text-transform: lowercase;
+}
+.drawer pre {
+    background: var(--bg)
+}
 .right-click-menu {
     background: var(--b1);
-    display:none;
+    display: none;
     border: 1px solid var(--b3);
-    min-width: 200px; max-width: 220px;
+    min-width: 200px;
+    max-width: 220px;
     flex-direction: column;
-    justify-content: flex-start;position: absolute;
+    justify-content: flex-start;
+    position: absolute;
     font-size: .8em;
     line-height: 1.6;
     list-style-type: none;
-    padding:0; margin:0;
+    padding: 0;
+    margin: 0;
     box-shadow: 5px 9px 8px var(--shade);
 }
-
-.right-click-menu li { display: flex; align-items: center; align-content: center; 
+.right-click-menu li {
+    display: flex;
+    align-items: center;
+    align-content: center;
     border-bottom: 1px solid var(--b5);
 }
-
 .right-click-menu li:last-child {
     border-bottom: none;
 }
-
-.right-click-menu a  {
+.right-click-menu a {
     width: 100%;
     padding: .25rem;
     display: flex;
@@ -670,26 +601,28 @@ p.note {
     text-decoration: none;
     align-items: flex-start;
     align-content: center;
-    }
+}
+.right-click-menu svg {
+    margin: .25rem .5rem 0 0;
+    fill: var(--b6);
+}
+#editor {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 200px;
+    outline: none;
+}
+.toolbar {
+    margin-bottom: 10px;
+}
+.toolbar button {
+    margin-right: 5px;
+}
+[contenteditable].full {
+    width: 100%;
+}
+[contenteditable].short {
+    height: 8em;
+    overflow-y: scroll;
+}
 
-.right-click-menu svg {margin: .25rem .5rem 0 0;fill: var(--b6);}
-
-
-
-    #editor {
-      border: 1px solid #ccc;
-      padding: 10px;
-      min-height: 200px;
-      outline: none;
-    }
-
-    .toolbar {
-      margin-bottom: 10px;
-    }
-
-    .toolbar button {
-      margin-right: 5px;
-    }
-
-[contenteditable].full { width: 100%; }
-[contenteditable].short { height: 8em; overflow-y: scroll; }

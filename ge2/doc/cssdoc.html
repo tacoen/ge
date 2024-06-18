@@ -2,8 +2,9 @@
 <html lang="en">
     <head>
         <meta charSet="utf-8"/>
-        <script src='../js/icons.js'></script>
+        <script src='../js/entypo.js'></script>
         <script src='../js/tafunc.js'></script>
+		<script src="../js/color.js"></script>
         <script src="func.js"></script>
         <link rel="stylesheet" href="../css/ge-new.css" type="text/css" media="all">
         <link rel="stylesheet" href="../style.css" type="text/css" media="all">
@@ -16,7 +17,7 @@
                 <i data-icon='menu'></i>
             </button>
             <div class='flex middle right'>
-                <button onclick='ta.theme_switch(this);csscolorcontainer();regenerateCSSStyles();' data-theme='light' class='themeswitcher naked'>
+                <button onclick='ta.theme_switch(this);ta.csscolor();' data-theme='light' class='themeswitcher naked'>
                     <i class='dark' data-icon='adjust-2'></i>
                     <i class='light' data-icon='adjust'></i>
                 </button>
@@ -228,7 +229,7 @@
                 <button class='small naked' onclick=''>click</button>
                 <button class='small rounded bg orange' onclick=''>click</button>
                 <button class='large rounded' onclick=''>click</button>
-                <button class='large bg blue' onclick=''>click</button>
+                <button class='large bg cyan' onclick=''>click</button>
                 <h2>Semantic Typography</h2>
                 <div class='flex typograph no-toc'>
                     <div class='w15'>
@@ -421,5 +422,12 @@
 </div>
 <!-- eof #htmlpart -->
 <div id='overlay'></div>
-<script src="color.js"></script>
+<script>
+
+ta.csscolor();
+//ta.csscolorcontainer();
+//ta.regenerateCSSStyles();
+
+
+</script>
 </body></html>

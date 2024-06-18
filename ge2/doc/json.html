@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charSet="utf-8"/>
-<script src='../js/icons.js'></script>
+<script src='../js/entypo.js'></script>
 <script src='../js/tafunc.js'></script>
 <script src='func.js'></script>
 <link rel="stylesheet" href="../css/ge-new.css" type="text/css" media="all">
@@ -35,7 +35,11 @@
 <div class="flex w100 container sitemenu" data-fetch="../_sitemenu.html"></div>
 </div>
 <!--sitemenu-->
-<div class="w100 pa main content">
+<aside class="pa w20 cssupage" id="toc" style="
+    height: auto;
+    padding-bottom: 2rem;
+"><div class="toc"></div></aside>
+<div class="w100 pa main content tocindex">
 <h1>JSON Demo</h1>
 
 <table>
@@ -43,7 +47,7 @@
 <td colspan='2'><h2>Load</h2></td>
 </tr><tr>
 <td>
-<pre><code>ta.load_json('test.json')
+<pre><code>ta.load_json('data/test.json')
   .then(data => {
     var ul = document.createElement('ul'); 
     data.name.forEach( (d)=> { 
@@ -79,7 +83,13 @@
 	   ta.fetch(".test2");'>save</button></p>
 </xmp>
 	
-</td><td class='test2' data-fetch='content.txt'>
+</td><td>
+json.php:
+<xmp>header('Content-type: application/json');
+$input = file_get_contents('php://input');
+file_put_contents('/var/www/ge2/doc/data/content.txt',$input);
+echo json_encode( $input, true );</xmp>
+<dov class='test2' data-fetch='data/content.txt'></div>
 
 </td></tr>
 </table>
@@ -91,7 +101,7 @@ ta.mediaWidth();
 
 
 
-ta.load_json('test.json')
+ta.load_json('data/test.json')
   .then(data => {
     var ul = document.createElement('ul'); 
     data.name.forEach( (d)=> { var li = document.createElement('li'); li.innerText=d; ul.appendChild(li); });

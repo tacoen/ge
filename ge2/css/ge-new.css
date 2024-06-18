@@ -307,12 +307,20 @@ pre{max-width:100%;overflow:auto;border:1px solid var(--b2);padding:var(--pad);f
 .warp{text-wrap:pretty}
 .cut{text-overflow:ellipsis;overflow:hidden;text-wrap:pretty;max-width:100%;white-space-collapse:break-spaces;white-space:pre}
 
+.ta-center { text-align: center; }
+.ta-left { text-align: left; }
+.ta-right { text-align: right; }
+.ta-justify { text-align:justify; }
+
 .ps0 > p { margin: 0; }
 .ps1 > p { margin: 0 0 var(--pad) 0; }
 .ps2 > p { margin: 0 0 calc(2 * var(--pad)) 0; }
 
 /* svg */ 
 svg{fill:var(--fg)}
+.rot90 { rotate: 90deg }
+.rot45 { rotate: 45deg }
+.rot180,.flip { rotate: 180deg }
 
 [theme='dark'] a.button:not(.naked) svg,
 [theme='dark'] button:not(.naked) svg{fill:var(--bg)}
@@ -332,18 +340,33 @@ kbd{font-family:var(--fs-monospace);padding:2px 4px;text-transform:uppercase;fon
 a.button { text-decoration: none; color: currentColor }
 [theme='dark'] a.button { text-decoration: none; color: var(--bg); }
 a.button,
-button{font-size:1em;padding:var(--pad);border-top:2px solid var(--fg6);border-left:2px solid var(--fg6);border-bottom:2px solid var(--b5);border-right:2px solid var(--b5);display:inline-flex;align-items:center;outline:none;background-color:var(--b1);justify-content:center}
+button{font-size: .9em;  padding:calc((1/2) * var(--pad)) var(--pad);
+background-color:var(--b1);
+border-top: 2px solid var(--fg6);border-left:2px solid var(--fg6);
+border-bottom:2px solid var(--b5);border-right:2px solid var(--b5);
+display:inline-flex;align-items:center;outline:none;justify-content:center;
+}
 a.button.small,
-button.small{font-size:.8em; padding:calc(1/2 * var(--pad)) var(--pad);}
-a.button.large
-button.large{font-size:1.2em;padding:calc(2 * var(--pad)) calc(3 * var(--pad)))}
+button.small{font-size:.8em; padding:calc((1/4) * var(--pad)) var(--pad); }
+a.button.large,
+button.large{font-size:1.2em;padding: var(--pad) calc(2 * var(--pad));}
 a.button.naked,
 button.naked{background:transparent;border:none}
 .rounded{border-radius:12%}
 a.button:hover,
 button:hover{outline:2px solid var(--b1):}
 
+button:not(.naked):focus { outline: 1px dotted var(--b6); outline-offset: 2px;  }
+button:not(.naked):active {
+border-bottom:2px solid var(--fg6);border-right:2px solid var(--fg6);
+border-top:2px solid var(--b5);border-left:2px solid var(--b5);
+}
+
+
 /* needed by tajsfunc */ 
+
+.taicon,
+.taicomu { height: 20px; width: 20px; }
 
 .taicon.x2 {height:40px;width:40px;}
 .taicon.x3 {height:60px;width:60px;}
@@ -376,7 +399,8 @@ dl.accordion dt.open + dd {display:inherit;border-top:1px solid var(--b4);}
 /* form */
 
 textarea { min-height: 5em; }
-input,textarea {outline:none;}
+input,textarea {outline:none;border-width: 1px;}
+input:active,textarea:active,
 input:focus,textarea:focus {outline:none;box-shadow:0 3px 2px var(--shade);}
 
 form { font-size: .9rem;}
