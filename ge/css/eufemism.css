@@ -31,7 +31,7 @@ html .eufrem:after { z-index: 3 }
     bottom: -3.2rem;
 	background: rgb(0 0 0 / 40%);
 	width: 200%;
-	height: 62%;
+	height: 800%;
     border-radius: 100%;	
     animation: wave 20s -1s reverse infinite;
     opacity: 0.9;

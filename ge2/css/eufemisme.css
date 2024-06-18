@@ -17,6 +17,9 @@ html .eufrem:after {
     z-index: 3
 }
 
+[theme='dark'] .eufrem * { color: var(--fg); }
+.eufrem * { color: var(--bg); }
+
 .orange {
     background: linear-gradient(90deg,#e52e71,#ff8a00);
 }

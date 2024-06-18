@@ -1,0 +1,227 @@
+:root {
+  --pad: 0.25rem;
+  --mar: 0.25rem;
+  --orange: #fc3; 
+}
+
+.orange { --color: var(--orange); background-color: var(--color); }
+.orange.gw20 { background-color: color(mix(var(--color), white, 20%) alpha(100%)); }
+.orange.gw40 { background-color: color(mix(var(--color), white, 40%) alpha(100%)); }
+.orange.gw60 { background-color: color(mix(var(--color), white, 60%) alpha(100%)); }
+.orange.gw80 { background-color: color(mix(var(--color), white, 80%) alpha(100%)); }
+
+.orange.gb20 { background-color: color(mix(var(--color), black, 20%) alpha(100%)); }
+.orange.gb40 { background-color: color(mix(var(--color), black, 40%) alpha(100%)); }
+.orange.gb60 { background-color: color(mix(var(--color), black, 60%) alpha(100%)); }
+.orange.gb80 { background-color: color(mix(var(--color), black, 80%) alpha(100%)); }
+
+
+.pl,
+.pl1 {
+  padding-left: var(--pad);
+}
+
+.pl2 {
+  padding-left: calc(2 * var(--pad));
+}
+
+.pl3 {
+  padding-left: calc(3 * var(--pad));
+}
+
+.pl4 {
+  padding-left: calc(4 * var(--pad));
+}
+
+.pl5 {
+  padding-left: calc(5 * var(--pad));
+}
+
+.pr,
+.pr1 {
+  padding-right: var(--pad);
+}
+
+.pr2 {
+  padding-right: calc(2 * var(--pad));
+}
+
+.pr3 {
+  padding-right: calc(3 * var(--pad));
+}
+
+.pr4 {
+  padding-right: calc(4 * var(--pad));
+}
+
+.pr5 {
+  padding-right: calc(5 * var(--pad));
+}
+
+.pt,
+.pt1 {
+  padding-top: var(--pad);
+}
+
+.pt2 {
+  padding-top: calc(2 * var(--pad));
+}
+
+.pt3 {
+  padding-top: calc(3 * var(--pad));
+}
+
+.pt4 {
+  padding-top: calc(4 * var(--pad));
+}
+
+.pt5 {
+  padding-top: calc(5 * var(--pad));
+}
+
+.pb,
+.pb1 {
+  padding-bottom: var(--pad);
+}
+
+.pb2 {
+  padding-bottom: calc(2 * var(--pad));
+}
+
+.pb3 {
+  padding-bottom: calc(3 * var(--pad));
+}
+
+.pb4 {
+  padding-bottom: calc(4 * var(--pad));
+}
+
+.pb5 {
+  padding-bottom: calc(5 * var(--pad));
+}
+
+.pa,
+.pa1 {
+  padding: var(--pad);
+}
+
+.pa2 {
+  padding: calc(2 * var(--pad));
+}
+
+.pa3 {
+  padding: calc(3 * var(--pad));
+}
+
+.pa4 {
+  padding: calc(4 * var(--pad));
+}
+
+.pa5 {
+  padding: calc(5 * var(--pad));
+}
+
+.ml,
+.ml1 {
+  margin-left: var(--mar);
+}
+
+.ml2 {
+  margin-left: calc(2 * var(--mar));
+}
+
+.ml3 {
+  margin-left: calc(3 * var(--mar));
+}
+
+.ml4 {
+  margin-left: calc(4 * var(--mar));
+}
+
+.ml5 {
+  margin-left: calc(5 * var(--mar));
+}
+
+.mr,
+.mr1 {
+  margin-right: var(--mar);
+}
+
+.mr2 {
+  margin-right: calc(2 * var(--mar));
+}
+
+.mr3 {
+  margin-right: calc(3 * var(--mar));
+}
+
+.mr4 {
+  margin-right: calc(4 * var(--mar));
+}
+
+.mr5 {
+  margin-right: calc(5 * var(--mar));
+}
+
+.mt,
+.mt1 {
+  margin-top: var(--mar);
+}
+
+.mt2 {
+  margin-top: calc(2 * var(--mar));
+}
+
+.mt3 {
+  margin-top: calc(3 * var(--mar));
+}
+
+.mt4 {
+  margin-top: calc(4 * var(--mar));
+}
+
+.mt5 {
+  margin-top: calc(5 * var(--mar));
+}
+
+.mb,
+.mb1 {
+  margin-bottom: var(--mar);
+}
+
+.mb2 {
+  margin-bottom: calc(2 * var(--mar));
+}
+
+.mb3 {
+  margin-bottom: calc(3 * var(--mar));
+}
+
+.mb4 {
+  margin-bottom: calc(4 * var(--mar));
+}
+
+.mb5 {
+  margin-bottom: calc(5 * var(--mar));
+}
+
+.ma,
+.ma1 {
+  margin: var(--mar);
+}
+
+.ma2 {
+  margin: calc(2 * var(--mar));
+}
+
+.ma3 {
+  margin: calc(3 * var(--mar));
+}
+
+.ma4 {
+  margin: calc(4 * var(--mar));
+}
+
+.ma5 {
+  margin: calc(5 * var(--mar));
+}

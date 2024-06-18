@@ -1,14 +1,53 @@
-# Ge2 JS Function
+# TaJSFunc
 
-## JS Class init
-
-Only if not using `TaUIFunc()`
+JS Class init, only if not using `TaUIFunc()`
 
 ```
 let ta = new TaJSFunc();
 ```
 
+`TaUIFunc` extends TaJSFunc(); 
+
+many function prototyping TaUIFunc.
+
+
+## ls
+
+ls was localstorage, designed for page/apps data using `ta.ls.remove()`, `ta.ls.save()`, and `ta.ls.get()` methods:
+
+
+```
+ta.ls.save('baz', 123);
+const bazValue = ta.ls.get('baz');
+console.log(bazValue); // Output: 123
+ta.ls.remove('baz');
+```
+
+## kukis
+
+kukis was localstorage, designed for sitewide such as theme, preferences and other site need, Using `ta.kukis.remove()`, `ta.kukis.save()`, and `ta.kukis.get()` methods:
+
+`kukis` can work in `file://`
+
+```
+ta.kukis.set('userid','someone')
+ta.kukis.set('timestamp',ta.ltm);
+
+ta.kukis_store
+// {location: '"home"', timestamp: '1718695001993', userid: '"someone"'}
+
+ta.kukis.remove('userid')
+
+ta.kukis.get('timestamp');
+// 1718695001993
+
+ta.kukis_store
+// {location: '"home"', timestamp: '1718695001993'}
+```
+
+
 ## rndtext() 
+
 ```
 const randomText = ta.rndtext();
 console.log(randomText); // Output: "mika23"
@@ -91,15 +130,4 @@ ta.load_json('https://example.com/data.json')
   });
 ```
 
-
-## ls
-
-`ls.init()`, `ls.save()`, and `ls.get()` methods:
-
-```
-ta.ls.init({ foo: 'bar' });
-ta.ls.save('baz', 123);
-const bazValue = ta.ls.get('baz');
-console.log(bazValue); // Output: 123
-```
 

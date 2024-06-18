@@ -29,24 +29,24 @@
 }
 
 [theme='dark']:root {	
-	--f1: color-mix(in srgb, var(--fg) 10%, black);
-	--f2: color-mix(in srgb, var(--fg) 20%, black);
-	--f3: color-mix(in srgb, var(--fg) 30%, black);
-	--f4: color-mix(in srgb, var(--fg) 40%, black);
-	--f5: color-mix(in srgb, var(--fg) 50%, black);
-	--f6: color-mix(in srgb, var(--fg) 60%, black);
-	--f7: color-mix(in srgb, var(--fg) 70%, black);
-	--f8: color-mix(in srgb, var(--fg) 80%, black);
-	--f9: color-mix(in srgb, var(--fg) 90%, black);
-	--b1: color-mix(in srgb, var(--bg) 10%, white);
-	--b2: color-mix(in srgb, var(--bg) 20%, white);
-	--b3: color-mix(in srgb, var(--bg) 30%, white);
-	--b4: color-mix(in srgb, var(--bg) 40%, white);
-	--b5: color-mix(in srgb, var(--bg) 50%, white);
-	--b6: color-mix(in srgb, var(--bg) 60%, white);
-	--b7: color-mix(in srgb, var(--bg) 70%, white);
-	--b8: color-mix(in srgb, var(--bg) 80%, white);
-	--b9: color-mix(in srgb, var(--bg) 90%, white);
+	--b1: color-mix(in srgb, var(--fg) 10%, black);
+	--b2: color-mix(in srgb, var(--fg) 20%, black);
+	--b3: color-mix(in srgb, var(--fg) 30%, black);
+	--b4: color-mix(in srgb, var(--fg) 40%, black);
+	--b5: color-mix(in srgb, var(--fg) 50%, black);
+	--b6: color-mix(in srgb, var(--fg) 60%, black);
+	--b7: color-mix(in srgb, var(--fg) 70%, black);
+	--b8: color-mix(in srgb, var(--fg) 80%, black);
+	--b9: color-mix(in srgb, var(--fg) 90%, black);
+	--f1: color-mix(in srgb, var(--bg) 10%, white);
+	--f2: color-mix(in srgb, var(--bg) 20%, white);
+	--f3: color-mix(in srgb, var(--bg) 30%, white);
+	--f4: color-mix(in srgb, var(--bg) 40%, white);
+	--f5: color-mix(in srgb, var(--bg) 50%, white);
+	--f6: color-mix(in srgb, var(--bg) 60%, white);
+	--f7: color-mix(in srgb, var(--bg) 70%, white);
+	--f8: color-mix(in srgb, var(--bg) 80%, white);
+	--f9: color-mix(in srgb, var(--bg) 90%, white);
 	--shade: #fff3;
 }
 
@@ -437,3 +437,5 @@ table { width: 100%; }
 th,td { padding: 0 var(--pad) 0 0 ; vertical-align: text-top; }
 
 [contenteditable] { padding: var(--pad); border: 1px solid var(--b3); }
+
+

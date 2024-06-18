@@ -5,9 +5,10 @@ class TaJSFunc {
         this.version = "0.1a";
         this.ltm = Date.now();
         this.host = window.location.pathname.toLowerCase().replace(/\W/g, "");
-        this.lsd = JSON.parse(localStorage.getItem(this.host));
-        this.kukis = JSON.parse(localStorage.getItem("kukis")) || {};
+        this.lsd = JSON.parse(localStorage.getItem(this.host)) || {};
+        this.kukis_store = JSON.parse(localStorage.getItem("kukis")) || {};
     }
+
     ;rndtext() {
         const rc = ['0123456789', 'aeiou', 'bcdfghjklmnpqrstvwxyz'];
         return (rc[2][Math.floor(Math.random() * rc[2].length)] + rc[1][Math.floor(Math.random() * rc[1].length)] + rc[2][Math.floor(Math.random() * rc[2].length)] + rc[1][Math.floor(Math.random() * rc[1].length)] + rc[0][Math.floor(Math.random() * rc[0].length)] + rc[0][Math.floor(Math.random() * rc[0].length)]);
@@ -41,6 +42,9 @@ class TaJSFunc {
     };
     notempty(w) {
         if (typeof w !== 'undefined') {
+            if (!w) {
+                return false;
+            }
             if (w === null) {
                 return false;
             }
@@ -140,28 +144,64 @@ class TaJSFunc {
         return attrs;
     }
     ;/* localstorage */
-    ls = {
-        init: (data={})=>{
-            if (this.lsd == null) {
-                localStorage.setItem(this.host, JSON.stringify(data))
-            }
-            this.lsd = JSON.parse(localStorage.getItem(this.host));
+    kukis = {
+        set: (w,v)=> {
+            if (this.kukis_store == null) {
+                this.kukis_store = {};
+            }            
+            this.kukis_store[w] = JSON.stringify(v);
+            localStorage.setItem('kukis', JSON.stringify(this.kukis_store));
+        },
+        remove: (w)=>{
+            let data = this.kukis_store;
+            delete data[w];
+            localStorage.setItem('kukis', JSON.stringify(data));
+        },
+        get: (w)=>{
+            let tres = ta.notempty(this.kukis_store[w]);
+            return JSON.parse(tres);
         }
-        ,
+    }
+    ls = {
         save: (w,v)=>{
             if (this.lsd == null) {
                 this.lsd = {};
             }
             this.lsd[w] = JSON.stringify(v);
             localStorage.setItem(this.host, JSON.stringify(this.lsd));
-        }
-        ,
+        },
+        remove: (w)=>{
+            data = this.lsd;
+            delete data[w];
+            localStorage.setItem(this.host, JSON.stringify(data));
+        },
         get: (w)=>{
-            return JSON.parse(this.lsd[w]);
+            let tres = ta.notempty(this.lsd[w]);
+            return JSON.parse(tres);
         }
     };
     is_elementExists(obj) {
         return document.querySelector(obj) !== null;
+    };
+	sortElements(parentSelector, childSelector, sortBy, isAttribute) {
+		// Get all the child elements within the parent
+		const childElements = document.querySelectorAll(parentSelector + " " + childSelector);
+		
+		// Convert the NodeList to an array for sorting
+		const childElementsArray = Array.from(childElements);
+		
+		// Sort the array based on the dataset or attribute values
+		childElementsArray.sort((a, b) => {
+			let aValue, bValue;
+			if (isAttribute) {
+				aValue = parseFloat(a.getAttribute(sortBy));
+				bValue = parseFloat(b.getAttribute(sortBy));
+			} else {
+				aValue = parseFloat(a.dataset[sortBy]);
+				bValue = parseFloat(b.dataset[sortBy]);
+			}
+			return aValue - bValue;
+		});
     }
 }
 /* eof tajsfunc */
@@ -212,16 +252,31 @@ class TaUIFunc extends TaJSFunc {
             );
         }
     };
-    theme_switch() {
-        var h = document.getElementsByTagName('html')[0]
-        var t = h.getAttribute('theme') || false
-        if (t == 'dark') {
-            h.setAttribute('theme', 'light')
-            //this.class.remove(obj,'dark')
-        } else {
-            h.setAttribute('theme', 'dark')
-            //this.class.add(obj,'dark')
-        }
+    
+    theme_switch(usecookies=false) {
+        
+		var h = document.getElementsByTagName('html')[0];
+		
+        if (usecookies === true) {
+            
+			var t = ta.notempty( ta.kukis.get('theme') )
+            h.setAttribute('theme', t)
+            
+		} else {
+            
+			var t = h.getAttribute('theme') || false
+
+            if (t == 'dark') {
+                h.setAttribute('theme', 'light')
+    			ta.kukis.remove('theme')
+                //this.class.remove(obj,'dark')
+            } else {
+                h.setAttribute('theme', 'dark')
+    			ta.kukis.set('theme','dark')
+            }
+            
+		}
+		
     }
     ;htmlpart(w) {
         return document.querySelector('#htmlpart [index="' + w + '"').innerHTML || "<!-- hp: " + w + "-->";

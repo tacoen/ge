@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Gradient Test</title>
+  <style>
+    :root { --orange: #fc3; }
+
+    .orange { --color: var(--orange); background-color: var(--color); }
+    .orange.gw20 { background-color: color(mix(var(--color), white, 20%) alpha(100%)); }
+    .orange.gw40 { background-color: color(mix(var(--color), white, 40%) alpha(100%)); }
+    .orange.gw60 { background-color: color(mix(var(--color), white, 60%) alpha(100%)); }
+    .orange.gw80 { background-color: color(mix(var(--color), white, 80%) alpha(100%)); }
+
+    .orange.gb20 { background-color: color(mix(var(--color), black, 20%) alpha(100%)); }
+    .orange.gb40 { background-color: color(mix(var(--color), black, 40%) alpha(100%)); }
+    .orange.gb60 { background-color: color(mix(var(--color), black, 60%) alpha(100%)); }
+    .orange.gb80 { background-color: color(mix(var(--color), black, 80%) alpha(100%)); }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box orange">Base</div>
+    <div class="box orange gw20">20% White</div>
+    <div class="box orange gw40">40% White</div>
+    <div class="box orange gw60">60% White</div>
+    <div class="box orange gw80">80% White</div>
+    <div class="box orange gb20">20% Black</div>
+    <div class="box orange gb40">40% Black</div>
+    <div class="box orange gb60">60% Black</div>
+    <div class="box orange gb80">80% Black</div>
+  </div>
+</body>
+</html>

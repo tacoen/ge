@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     precancopy();
 
+  ta.theme_switch(true);
 
 
 });
