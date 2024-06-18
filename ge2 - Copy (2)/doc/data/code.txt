@@ -1,0 +1,18 @@
+let dbug = false
+console.assert(dbug, "the error")
+
+document.querySelectorAll('.markdown').forEach( function(md) { 
+	mdhtml = marked.parse(md.innerHTML); 
+	md.innerHTML =''+ mdhtml 
+});
+
+var div = document.getElementById('atas');
+
+Object.keys(icom).forEach( function(ic) {
+	var span = document.createElement('span')
+	var i = document.createElement('i')
+	i.setAttribute('data-icon',ic);
+	span.innerHTML='<b>'+ic+"</b>"
+	span.prepend(i)
+	div.append(span)
+})	

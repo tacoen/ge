@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charSet="utf-8"/>
+<script src='../js/entypo.js'></script>
+<script src='../js/tafunc.js'></script>
+<script src='../js/editor.js'></script>
+<script src='func.js'></script>
+<link rel="stylesheet" href="../css/ge-new.css" type="text/css" media="all">
+<link rel="stylesheet" href="../style.css" type="text/css" media="all">
+<title>editor</title>
+</head>
+<body>
+<nav topnav class='flex'>
+<button class='naked' data-toggle='#sitemenu'>
+<i data-icon='menu'></i>
+</button>
+<div class='flex middle right'>
+<button onclick='ta.theme_switch(this)' data-theme='light' class='themeswitcher naked'>
+<i class='dark' data-icon='adjust-2'></i>
+<i class='light' data-icon='adjust'></i>
+</button>
+<a href='/ge2/' class='favicon'>
+<img src='/favicon.ico'>
+</a>
+</div>
+</nav>
+<!--topnav-->
+<div id="sitemenu" class="hide">
+<button class="naked closer" data-toggle="#sitemenu">
+<i data-icon="cross"></i>
+</button>
+<header>
+<h1 class="red fg">Ge(骼) 2.0</h1>
+</header>
+<div class="flex w100 container sitemenu" data-fetch="../_sitemenu.html"></div>
+</div>
+<!--sitemenu-->
+
+<aside class="pa w20 cssupage" id="toc"><div class="toc"></div></aside>
+<div class="pa main content tocindex">
+
+<h1>Editable</h1>
+
+<p>The document.designMode property is a feature in JavaScript that allows you to enable or disable the ability to edit the entire HTML document content.
+When you set document.designMode to "on", the entire document becomes editable, similar to how a rich text editor or a WYSIWYG (What You See Is What You Get) editor would work.
+Just add:</p>
+    
+<xmp><script>document.designMode = "on";</script></xmp>
+<h2>Edit a div</h2>
+
+  <div class="toolbar">
+    <button onclick="ta.applyHeading('h1')">H1</button>
+    <button onclick="ta.applyHeading('h2')">H2</button>
+    <button onclick="ta.applyHeading('h3')">H3</button>
+  </div>
+  <div id="editor" contenteditable="true" class='full short'>
+My heart flutters for thee, 
+O JavaScript, my one true love.
+Your elegant syntax, 
+Your functional grace,
+Fills me with adoration.
+
+When I see your variables declared,
+My pulse quickens.
+As I craft your conditional statements,
+My spirit soars.
+
+Your objects and arrays,
+A symphony of data.
+Your methods and functions,
+Bringing logic to life.
+
+JavaScript, my coding companion,
+Your versatility knows no bounds.
+From frontend to backend,
+You are the language of my dreams.
+
+I will forever cherish our union,
+For you have captured my programmer's heart.
+My love for you, dear JavaScript,
+Will never depart. </div>
+    
+<h2>RightClick menu</h2>
+  <div id="target-div"  contenteditable>
+      <div>this is contenteditable inside</div>
+      <p>Right-click me to open the menu</p>
+      <p none>not here. </p>
+      <p>Right-click me to open the menu!</p>
+  </div>
+
+<xmp>document.addEventListener("DOMContentLoaded", function() {
+ta.RightClickMenu('#target-div', [
+  { icon: '<i data-icon="add-to-list"></i>',label: 'Option 1', onClick: () => console.log('Option 1 clicked') },
+  { icon: '<i data-icon="code"></i>',label: 'Option 2', onClick: () => console.log('Option 2 clicked') },
+  { icon: '<i data-icon="txt"></i>',label: '<b>Option 3</b><br>HTML and some text bellow it.', onClick: () => console.log('Option 3 clicked') }
+]);</xmp>
+ 
+
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+
+ta.RightClickMenu('#target-div', [
+  { icon: '<i data-icon="add-to-list"></i>',label: 'Option 1', onClick: () => console.log('Option 1 clicked') },
+  { icon: '<i data-icon="code"></i>',label: 'Option 2', onClick: () => console.log('Option 2 clicked') },
+  { icon: '<i data-icon="txt"></i>',label: '<b>Option 3</b><br>HTML and some text bellow it.', onClick: () => console.log('Option 3 clicked') }
+]);
+
+ta.editor('#editor')
+   
+ta.mediaWidth();
+precancopy();
+
+});
+
+</script>
+</body>
+</html>

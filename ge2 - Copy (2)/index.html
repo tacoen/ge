@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charSet="utf-8"/>
+<script src="js/entypo.js"></script>
+<script src="js/tafunc.js"></script>
+<link rel="stylesheet" href="css/ge-new.css" type="text/css" media="all">
+<link rel="stylesheet" href="style.css" type="text/css" media="all">
+
+<title>ge2</title>
+
+</head>
+<body>
+<nav topnav class='flex'>
+
+<a data-toggle='#sitemenu' class='favicon'><img src='/favicon.ico'></a>
+
+<div class='flex middle right'>
+	<button onclick='ta.theme_switch(this)' data-theme='light' class='themeswitcher naked'>
+	<i class='dark' data-icon='adjust-2'></i>
+	<i class='light' data-icon='adjust'></i>
+	</button>
+
+</div>
+</nav><!--topnav-->
+<div class="flex warp top" container>
+
+<header class="w100">
+<h1>Ge(骼) 2.0</h1>
+</header>
+
+<div class="w25 flex column warp pa2">
+<div id="clone_sitemenu" class="sitemenu onpage"></div>
+</div>
+
+<div class="w75 pa2">
+
+<h2>Concept</h2>
+<P>Ge is html/js/css/php for every php apps creation, I use and currated. 
+"Ge" is skeleton in Chinesse.</p>
+
+<h3>Usage</h3>
+<p>Collection of PHP/JS and CSS To made web development more easier. View the source <kbd>CTRL + U</kbd> or <kbd>F12</kbd> to use console to play.</p>
+
+<h3>1rem = 16px == 1em</h3>
+
+<p>In responsive web design, it's common to use a combination of 1em and 1rem, depending on the specific requirements of the layout and the desired behavior. 1rem is often used for setting the overall layout and structure of the page, while 1em is used for scaling individual elements within that structure.</p>
+
+<pre><code>html { font-size: 16px }
+
+/* Responsive media */
+
+body {font-size:1rem} 
+
+@media (min-width: 600px) { body { font-size:1rem } /* 16px */ }
+@media (min-width: 960px) { body { font-size:1.125rem } /* 18px */ }
+@media (min-width: 1200px) { body { font-size:1.25rem } /* 20px */ }
+
+/* scaling individual elements */
+
+h1 { font-size: 2em }
+h2 { font-size: 1.5em }
+h3 { font-size: 1.25em }
+h4 { font-size: 1em; /* = body */ }
+h5 { font-size: .8em }
+h6 { font-size: .7em }
+</code></pre>
+
+
+</div>
+
+</div>
+<div id="sitemenu" class="hide">
+<button class="naked closer" data-toggle="#sitemenu">
+<i data-icon="cross"></i>
+</button>
+<header>
+<h1 class="red fg">Ge(骼) 2.0</h1>
+</header>
+<div class="flex w100 container sitemenu" data-fetch="_sitemenu.html"></div>
+</div>
+
+<div id="htmlpart">
+ <div index="x"><i data-icon="cross"></i></div>
+</div>
+
+<script>
+function pagesm() {
+	document.getElementById('clone_sitemenu').innerHTML = document.querySelector("[data-fetch='_sitemenu.html']").innerHTML;
+	taicon.delay();		
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+ 
+ta.fetch('#sitemenu .container',null,'pagesm');
+ta.mediaWidth();
+});
+</script>
+
+</body>
+</html>

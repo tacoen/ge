@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charSet="utf-8"/>
+        <script src='../js/entypo.js'></script>
+        <script src='../js/tafunc.js'></script>
+		<script src="../js/color.js"></script>
+        <script src="func.js"></script>
+        <link rel="stylesheet" href="../css/ge-new.css" type="text/css" media="all">
+        <link rel="stylesheet" href="../style.css" type="text/css" media="all">
+        <title>CSS Utilities</title>
+        <style id="generated-styles"></style> 
+    </head>
+    <body>
+        <nav topnav class='flex'>
+            <button class='naked' data-toggle='#sitemenu'>
+                <i data-icon='menu'></i>
+            </button>
+            <div class='flex middle right'>
+                <button onclick='ta.theme_switch(this);ta.csscolor();' data-theme='light' class='themeswitcher naked'>
+                    <i class='dark' data-icon='adjust-2'></i>
+                    <i class='light' data-icon='adjust'></i>
+                </button>
+                <a href='/ge2/' class='favicon'>
+                    <img src='/favicon.ico'>
+                </a>
+            </div>
+        </nav>
+        <!--topnav-->
+        <div id='sitemenu' class='hide'>
+            <button class='naked closer' data-toggle='#sitemenu'>
+                <i data-icon='cross'></i>
+            </button>
+            <header>
+                <h1 class='red fg'>(骼)</h1>
+            </header>
+            <div class='flex w100 sitemenu container' data-fetch='../_sitemenu.html' class='hide'></div>
+        </div>
+        <div class='flex warp'>
+            <main class='pa w80 content tocindex'>
+                <h1>Ge2 CSS as utilities</h1>
+                <h2>Color mix</h2>
+                <div class='boxes'>
+                    <div class='c orange'>
+                        <div class="bw9">9</div>
+                        <div class="bw8">8</div>
+                        <div class="bw7">7</div>
+                        <div class="bw6">6</div>
+                        <div class="bw5">5</div>
+                        <div class="bw4">4</div>
+                        <div class="bw3">3</div>
+                        <div class="bw2">2</div>
+                        <div class="bw1">1</div>
+                        <div class="bg">g</div>
+                        <div class="bd1">1</div>
+                        <div class="bd2">2</div>
+                        <div class="bd3">3</div>
+                        <div class="bd4">4</div>
+                        <div class="bd5">5</div>
+                        <div class="bd6">6</div>
+                        <div class="bd7">7</div>
+                        <div class="bd8">8</div>
+                        <div class="bd9">9</div>
+                    </div>
+                    <div class='c red'>
+                        <div class="bw9">9</div>
+                        <div class="bw8">8</div>
+                        <div class="bw7">7</div>
+                        <div class="bw6">6</div>
+                        <div class="bw5">5</div>
+                        <div class="bw4">4</div>
+                        <div class="bw3">3</div>
+                        <div class="bw2">2</div>
+                        <div class="bw1">1</div>
+                        <div class="bg">g</div>
+                        <div class="bd1">1</div>
+                        <div class="bd2">2</div>
+                        <div class="bd3">3</div>
+                        <div class="bd4">4</div>
+                        <div class="bd5">5</div>
+                        <div class="bd6">6</div>
+                        <div class="bd7">7</div>
+                        <div class="bd8">8</div>
+                        <div class="bd9">9</div>
+                    </div>
+                    <div class='c blue'>
+                        <div class="bw9">9</div>
+                        <div class="bw8">8</div>
+                        <div class="bw7">7</div>
+                        <div class="bw6">6</div>
+                        <div class="bw5">5</div>
+                        <div class="bw4">4</div>
+                        <div class="bw3">3</div>
+                        <div class="bw2">2</div>
+                        <div class="bw1">1</div>
+                        <div class="bg">g</div>
+                        <div class="bd1">1</div>
+                        <div class="bd2">2</div>
+                        <div class="bd3">3</div>
+                        <div class="bd4">4</div>
+                        <div class="bd5">5</div>
+                        <div class="bd6">6</div>
+                        <div class="bd7">7</div>
+                        <div class="bd8">8</div>
+                        <div class="bd9">9</div>
+                    </div>
+                    <div class='c cyan'>
+                        <div class="bw9">9</div>
+                        <div class="bw8">8</div>
+                        <div class="bw7">7</div>
+                        <div class="bw6">6</div>
+                        <div class="bw5">5</div>
+                        <div class="bw4">4</div>
+                        <div class="bw3">3</div>
+                        <div class="bw2">2</div>
+                        <div class="bw1">1</div>
+                        <div class="bg">g</div>
+                        <div class="bd1">1</div>
+                        <div class="bd2">2</div>
+                        <div class="bd3">3</div>
+                        <div class="bd4">4</div>
+                        <div class="bd5">5</div>
+                        <div class="bd6">6</div>
+                        <div class="bd7">7</div>
+                        <div class="bd8">8</div>
+                        <div class="bd9">9</div>
+                    </div>
+                    <div class='c magenta'>
+                        <div class="bw9">9</div>
+                        <div class="bw8">8</div>
+                        <div class="bw7">7</div>
+                        <div class="bw6">6</div>
+                        <div class="bw5">5</div>
+                        <div class="bw4">4</div>
+                        <div class="bw3">3</div>
+                        <div class="bw2">2</div>
+                        <div class="bw1">1</div>
+                        <div class="bg">g</div>
+                        <div class="bd1">1</div>
+                        <div class="bd2">2</div>
+                        <div class="bd3">3</div>
+                        <div class="bd4">4</div>
+                        <div class="bd5">5</div>
+                        <div class="bd6">6</div>
+                        <div class="bd7">7</div>
+                        <div class="bd8">8</div>
+                        <div class="bd9">9</div>
+                    </div>
+                    <div class='c green'>
+                        <div class="bw9">9</div>
+                        <div class="bw8">8</div>
+                        <div class="bw7">7</div>
+                        <div class="bw6">6</div>
+                        <div class="bw5">5</div>
+                        <div class="bw4">4</div>
+                        <div class="bw3">3</div>
+                        <div class="bw2">2</div>
+                        <div class="bw1">1</div>
+                        <div class="bg">g</div>
+                        <div class="bd1">1</div>
+                        <div class="bd2">2</div>
+                        <div class="bd3">3</div>
+                        <div class="bd4">4</div>
+                        <div class="bd5">5</div>
+                        <div class="bd6">6</div>
+                        <div class="bd7">7</div>
+                        <div class="bd8">8</div>
+                        <div class="bd9">9</div>
+                    </div>
+                </div>
+                
+                <h2>Online Color Pickers</h2>
+                <div class="drawer left w55">
+                <div class="flex">
+                    <div class="color-inputs w20"></div>
+                    <div class="css-output w80"><pre id="css-styles"></pre>
+                    </div>
+                </div>
+                </div>
+                <p>Click the drawer on the left.</p>
+                <h2>Background</h2>
+                <div class='bgr flex event'>
+                    <div class='bg'></div>
+                    <div class='bg1'></div>
+                    <div class='bg2'></div>
+                    <div class='bg3'></div>
+                    <div class='bg4'></div>
+                    <div class='bg5'></div>
+                    <div class='bg6'></div>
+                    <div class='bg7'></div>
+                    <div class='bg8'></div>
+                    <div class='bg9'></div>
+                </div>
+                <h2>Foreground</h2>
+                <div class='bgr flex event'>
+                    <div class='f1' style='color: var(--f1)'></div>
+                    <div class='f2' style='color: var(--f2)'></div>
+                    <div class='f3' style='color: var(--f3)'></div>
+                    <div class='f4' style='color: var(--f4)'></div>
+                    <div class='f5' style='color: var(--f5)'></div>
+                    <div class='f6' style='color: var(--f6)'></div>
+                    <div class='f7' style='color: var(--f7)'></div>
+                    <div class='f8' style='color: var(--f8)'></div>
+                    <div class='f9' style='color: var(--f9)'></div>
+                    <div class='fg' style='color: var(--fg)'></div>
+                </div>
+                <div class='bgr flex event'>
+                    <div class='b1' style='color: var(--b1)'></div>
+                    <div class='b2' style='color: var(--b2)'></div>
+                    <div class='b3' style='color: var(--b3)'></div>
+                    <div class='b4' style='color: var(--b4)'></div>
+                    <div class='b5' style='color: var(--b5)'></div>
+                    <div class='b6' style='color: var(--b6)'></div>
+                    <div class='b7' style='color: var(--b7)'></div>
+                    <div class='b8' style='color: var(--b8)'></div>
+                    <div class='b9' style='color: var(--b9)'></div>
+                </div>
+                <h2>Applications</h2>
+                <p>Click to remove/close</p>
+                <div class='msg notice'></div>
+                <div class='msg warn'></div>
+                <div class='msg info'></div>
+                <div class='msg success'></div>
+                <h2>button</h2>
+                <p>You can combine with .bg .color and .bo</p>
+                <button onclick=''>click</button>
+                <button class='naked' onclick=''>click</button>
+                <button class='small' onclick=''>click</button>
+                <button class='small naked' onclick=''>click</button>
+                <button class='small rounded bg orange' onclick=''>click</button>
+                <button class='large rounded' onclick=''>click</button>
+                <button class='large bg cyan' onclick=''>click</button>
+                <h2>Semantic Typography</h2>
+                <div class='flex typograph no-toc'>
+                    <div class='w15'>
+                        <p class="fw1">100</p>
+                        <p class="fw2">200</p>
+                        <p class="fw3">300</p>
+                        <p class="fw4">400</p>
+                        <p class="fw5">500</p>
+                        <p class="fw6">600</p>
+                        <p class="fw7">700</p>
+                    </div>
+                    <div class='w35'>
+                        <div class='bo-t'>Isn't it pretty to think so?</div>
+                        <div class='mh2'>
+                            The <span class="mono">sun</span>
+                            also <em>rises</em>
+                            , and the <strong>sun</strong>
+                            goes <a href="#">down</a>
+                            , and <b>hastens</b>
+                            to the <i>place</i>
+                            where it <code>arose</code>
+                            when you hit <kbd>enter</kbd>
+                            once.
+                            . - <cite>The Sun Also Rises</cite>
+                        </div>
+                        <div class='box mh2'>The world breaks everyone, and afterward, many are strong at the broken places
+                        </div>
+                        <blockquote class='mh2'>The sun also rises, and the sun goes down, and hastens to the place where it arose.
+                        </blockquote>
+                        <pre>The sun also rises, and the sun goes down, and hastens to the place where it arose.</pre>
+                        <pre class='warp'>The world breaks everyone, and afterward, many are strong at the broken places</pre>
+                        <p class='cut'>The sun also rises, and the sun goes down, and hastens to the place where it arose.</p>
+                    </div>
+                    <div class='w50 pl4'>
+                        <h1>h1 heading</h1>
+                        <p class="serif condense">The world breaks everyone, and afterward, many are strong at the broken places. - A Farewell to Arms</p>
+                        <h2>h2 heading</h2>
+                        <p class="serif">The world breaks everyone, and afterward, many are strong at the broken places. 
+                            </p>
+                        <h3>h3 heading</h3>
+                        <p class="mono">Isn't it pretty to think so?</p>
+                        <h4>h4 heading</h4>
+                        <p class="system">All things truly wicked start from innocence.</p>
+                        <h5>h5 heading</h5>
+                        <p class="sans">The sun also rises, and the sun goes down, and hastens to the place where it arose.</p>
+                        <h6>h6 heading</h6>
+                        <p class="mono condense">Isn't it pretty to think so?</p>
+                    </div>
+                </div>
+                <h2>Column</h2>
+                <p>no such thing as w13 or w77, we only create the most commonly used size.</p>
+                <div class='coldemo'>
+                    <div class="row">
+                        <div class="w25"></div>
+                        <div class="w25"></div>
+                        <div class="w25"></div>
+                        <div class="w25"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w50"></div>
+                        <div class="w25"></div>
+                        <div class="w25"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w10"></div>
+                        <div class="w10"></div>
+                        <div class="w10"></div>
+                        <div class="w10"></div>
+                        <div class="w10"></div>
+                        <div class="w10"></div>
+                        <div class="w10"></div>
+                        <div class="w10"></div>
+                        <div class="w10"></div>
+                        <div class="w10"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w33"></div>
+                        <div class="w33"></div>
+                        <div class="w33"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w15"></div>
+                        <div class="w15"></div>
+                        <div class="w15"></div>
+                        <div class="w15"></div>
+                        <div class="w15"></div>
+                        <div class="w15"></div>
+                        <div class="w10"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w20"></div>
+                        <div class="w20"></div>
+                        <div class="w20"></div>
+                        <div class="w20"></div>
+                        <div class="w20"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w30"></div>
+                        <div class="w30"></div>
+                        <div class="w40"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w35"></div>
+                        <div class="w35"></div>
+                        <div class="w30"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w40"></div>
+                        <div class="w30"></div>
+                        <div class="w30"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w45"></div>
+                        <div class="w45"></div>
+                        <div class="w10"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w50"></div>
+                        <div class="w50"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w55"></div>
+                        <div class="w45"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w60"></div>
+                        <div class="w40"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w65"></div>
+                        <div class="w35"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w70"></div>
+                        <div class="w30"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w75"></div>
+                        <div class="w25"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w80"></div>
+                        <div class="w20"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w85"></div>
+                        <div class="w15"></div>
+                    </div>
+                    <div class="row">
+                        <div class="w100"></div>
+                    </div>
+                </div>
+                <h2>Modal & Overlays</h2>
+                <button data-modal='test'>open modal</button>
+                <xmp>
+                    <div id='htmlpart'>
+                        <!--closer-->
+                        <button data-part='closer' class='naked closer'>
+                            <i data-icon='cross'></i>
+                        </button>
+                        <!--test modal-->
+                        <div data-part='test' class='modal bg w50 flex middle center'>
+                            <h3>inside modal</h3>
+                            <p>there is some content.</p>
+                        </div>
+                    </div>
+                    <div id='overlay'></div>
+                </xmp>
+				
+                <h2>Form</h2>
+				
+				<p>Go to <a href="form.html">Form</a></p>
+            </main>
+            <aside class='pa w20 cssupage' id='toc'>
+                <div class='toc'></div>
+            </aside>
+        </div>
+</div>
+<div id='htmlpart'>
+    <button data-part='closer' class='naked closer' data-toggle='#sitemenu'>
+        <i data-icon='cross'></i>
+    </button>
+    <div data-part='test' class='modal tl bg w50 pa2'>
+        <button class='naked closer'>
+            <i data-icon='cross'></i>
+        </button>
+        <h3>inside modal</h3>
+        <p>there is some content.</p>
+    </div>
+</div>
+<!-- eof #htmlpart -->
+<div id='overlay'></div>
+<script>
+
+ta.csscolor();
+//ta.csscolorcontainer();
+//ta.regenerateCSSStyles();
+
+
+</script>
+</body></html>

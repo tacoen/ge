@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charSet="utf-8"/>
+        <script src='../js/entypo.js'></script>
+        <script src='../js/tafunc.js'></script>
+        <link rel="stylesheet" href="../css/ge-new.css" type="text/css" media="all">
+        <link rel="stylesheet" href="../style.css" type="text/css" media="all">
+        <title>Drap and drop</title>
+    </head>
+    <body>
+        <nav topnav class='flex'>
+            <button class='naked' data-toggle='#sitemenu'>
+                <i data-icon='menu'></i>
+            </button>
+            <div class='flex middle right'>
+                <button onclick='ta.theme_switch(this)' data-theme='light' class='themeswitcher naked'>
+                    <i class='dark' data-icon='adjust-2'></i>
+                    <i class='light' data-icon='adjust'></i>
+                </button>
+                <a href='/ge2/' class='favicon'>
+                    <img src='/favicon.ico'>
+                </a>
+            </div>
+        </nav>
+        <!--topnav-->
+        <div id="sitemenu" class="hide">
+            <button class="naked closer" data-toggle="#sitemenu">
+                <i data-icon="cross"></i>
+            </button>
+            <header>
+                <h1 class="red fg">Ge(骼) 2.0</h1>
+            </header>
+            <div class="flex w100 container sitemenu" data-fetch="../_sitemenu.html"></div>
+        </div>
+        <!--sitemenu-->
+        <div class="w100 pa">
+            <h1>HTML Form</h1>
+            <div class="w100 flex">
+                <form class='w33  pr3'>
+                    <h2>HTML5 Form Validation</h2>
+                    <p>All sample form using html5 required.</p>
+                    <p>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </p>
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    <p>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required minlength="8" maxlength="20">
+                    </p>
+                    <p>
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" required min="18" max="100">
+                    </p>
+                    <p>
+                        <label for="website">Website:</label>
+                        <input type="url" id="website" name="website" required>
+                    </p>
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                </form>
+                <form class='w33 pr3'>
+                    <h2>Formal Form</h2>
+                    <p>form.formal</p>
+                    <div class='formal'>
+                        <p>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name2" name="name" required>
+                        </p>
+                        <p>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email2" name="email" required>
+                        </p>
+                        <p>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password2" name="password" required minlength="8" maxlength="20">
+                        </p>
+                        <p>
+                            <label for="age">Age:</label>
+                            <input type="number" id="age2" name="age" required min="18" max="100">
+                        </p>
+                        <p>
+                            <label for="website">Website:</label>
+                            <input type="url" id="website2" name="website" required>
+                        </p>
+                        <p>
+                            <button type="submit">Submit</button>
+                        </p>
+                    </div>
+                </form>
+                <form class='w33 pr3'>
+                    <h2>Inline Form</h2>
+                    <p>form > .inline</p>
+                    <div class='inline'>
+                        <p>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email3" name="email" required>
+                        </p>
+                        <p>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password3" name="password" required minlength="8" maxlength="20">
+                        </p>
+                        <p>
+                            <button class='small' type="submit">Submit</button>
+                        </p>
+                    </div>
+                    <h2>Form full</h2>
+                    <p>form > .full</p>
+                    <div class='full'>
+                        <p>
+                            <label for="password">textarea</label>
+                            <textarea maxlength="120" required></textarea>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+
+                ta.fetch('#sitemenu .container');
+                ta.mediaWidth();
+
+                taicon.delay();
+
+            });
+        </script>
+    </body>
+</html>
+</script></html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charSet="utf-8"/>
+        <script src='../js/entypo.js'></script>
+        <script src='../js/tafunc.js'></script>
+		<script src='../js/dnd.js'></script>
+        <link rel="stylesheet" href="../css/ge-new.css" type="text/css" media="all">
+        <link rel="stylesheet" href="../style.css" type="text/css" media="all">
+        <title>Drap and drop</title>
+    </head>
+    <body>
+        <nav topnav class='flex'>
+            <button class='naked' data-toggle='#sitemenu'>
+                <i data-icon='menu'></i>
+            </button>
+            <div class='flex middle right'>
+                <button onclick='ta.theme_switch(this)' data-theme='light' class='themeswitcher naked'>
+                    <i class='dark' data-icon='adjust-2'></i>
+                    <i class='light' data-icon='adjust'></i>
+                </button>
+                <a href='/ge2/' class='favicon'>
+                    <img src='/favicon.ico'>
+                </a>
+            </div>
+        </nav>
+        <!--topnav-->
+        <div id="sitemenu" class="hide">
+            <button class="naked closer" data-toggle="#sitemenu">
+                <i data-icon="cross"></i>
+            </button>
+            <header>
+                <h1 class="red fg">Ge(骼) 2.0</h1>
+            </header>
+            <div class="flex w100 container sitemenu" data-fetch="../_sitemenu.html"></div>
+        </div>
+        <!--sitemenu-->
+        <div class="pa" container>
+            <div class='dnd flex warp top'>
+                <div class='w33 col1'>
+				<h5 class='ta-center'>Source</h5>
+                    <ul>
+                        <li draggable="true" ondragstart="ta.drag(event)">One</li>
+                        <li draggable="true" ondragstart="ta.drag(event)">Two</li>
+                        <li draggable="true" ondragstart="ta.drag(event)">Three</li>
+                        <li draggable="true" ondragstart="ta.drag(event)">
+                            <img src='/favicon.ico'>
+                        </li>
+                        <li draggable="true" ondragstart="ta.drag(event)">
+                            Four <b>any</b>
+                            HTML
+                        </li>
+                    </ul>
+                </div>
+                <div class='w33 col2'>
+				<h5 class='ta-center'>Copy</h5>
+                    <ol ondrop="ta.drop(event,'copy',test,'.col2')" class='dropable' ondragover="ta.allowDrop(event)"></ol>
+                </div>
+                <div class='w33 col3'>
+				<h5 class='ta-center'>Move</h5>
+                    <ol ondrop="ta.drop(event,'move',test,'.col3')" class='dropable' ondragover="ta.allowDrop(event)"></ol>
+                </div>
+            </div>
+			<h3>init</h3>
+			<xmp> ta.dnd(); 
+// chained function ondrop
+function test(event,param) {
+	console.log(document.querySelectorAll(param+' ol li'))
+}</xmp>					
+            <h3>html source</h3>
+            <pre>
+                <code id='source'></code>
+            </pre>
+	
+        </div>
+        <script>
+				ta.dnd();
+			function test(event,param) {
+				console.log(document.querySelectorAll(param+' ol li'))
+			}
+
+			document.addEventListener("DOMContentLoaded", (e)=>{
+			
+
+                ta.fetch('#sitemenu .container');
+                taicon.delay();
+
+                ta.elementof('#source').innerText = ta.elementof('.dnd').outerHTML
+				
+
+            }
+            );
+        </script>
+    </body>
+</html>
+</script></html>

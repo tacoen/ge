@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charSet="utf-8"/>
+<script src='../js/entypo.js'></script>
+<script src='../js/tafunc.js'></script>
+<link rel="stylesheet" href="../css/ge-new.css" type="text/css" media="all">
+<link rel="stylesheet" href="../css/eufemisme.css" type="text/css" media="all">
+<link rel="stylesheet" href="../style.css" type="text/css" media="all">
+<title>bgr animation to impress</title>   
+</head>
+<body>
+<nav topnav class='flex'>
+<button class='naked' data-toggle='#sitemenu'><i data-icon='menu'></i></button>
+<div class='flex middle right'>
+<button onclick='ta.theme_switch(this)' data-theme='light' class='themeswitcher naked'>
+<i class='dark' data-icon='adjust-2'></i>
+<i class='light' data-icon='adjust'></i>
+</button>
+<a href='/ge2/' class='favicon'><img src='/favicon.ico'></a>
+</div>
+</nav><!--topnav-->
+<div id='sitemenu' class='hide'>
+<button class='naked closer' data-toggle='#sitemenu'>
+<i data-icon='cross'></i>
+</button>
+<header>
+<h1 class='red fg'>(骼)</h1>
+</header>
+<div class='flex w100 sitemenu container' data-fetch='../_sitemenu.html' class='hide'></div>
+</div>
+<div class='flex warp pa2'>
+
+<h1>css only bgr animation to impress</h1>
+
+<div class='w100'>
+<dl class='accordion'>
+<dt>slida</dt>
+<dd class='incode'>
+<header class='p-lg w100 ph2 pv2 fg-bg eufrem slida'>
+<h1>slida</h1>
+</header>
+</dd>
+    
+<dt>sine</dt>
+<dd class='incode'>
+<header class='p-lg w100 ph2 pv2 fg-bg eufrem sine'>
+<h1>Sine</h1>
+</header>
+</dd>
+<dt>dew</dt>
+<dd class='incode'>
+<header class='p-lg w100 ph2 pv2 eufrem dew'>
+<h1>Dew</h1>
+</header>
+</dd>
+<dt>spot</dt>
+<dd class='incode'>
+<header class='p-lg w100 ph2 pv2 fg-bg eufrem spot'>
+<h1>spot</h1>
+</header>
+</dd>
+
+<dt>grad</dt>
+<dd class='incode'>
+<header class='p-lg w100 ph2 pv2 fg-bg eufrem grad'>
+<h1>grad</h1>
+</header>
+</dd>
+
+<dt>blob</dt>
+<dd class='incode'>
+<header class='p-lg w100 ph2 pv2 fg-bg eufrem blob'>
+<h1>blob</h1>
+</header>
+</dd>
+</dl>
+
+</div>
+
+</div>
+
+<div id='htmlpart'>
+<div index='x'><i data-icon='squared-cross'></i></div>
+<div index='accordion_button'><i data-icon='chevron-small-down'></i><i data-icon='chevron-small-up'	></i></div>
+</div>
+
+</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+taicon.delay();
+ta.fetch('#sitemenu .container');
+
+    	var a = document.querySelectorAll(".incode"); a.forEach((d) => {
+			d.addEventListener('click', () => {	
+				if  ( d.classList.contains('coded') ) {
+					var xmp = d.querySelector('xmp');
+					d.innerHTML = xmp.innerText
+					d.classList.remove('coded')
+				} else {
+					var html = d.innerHTML
+					d.classList.add('coded')
+					//d.innerHTML = '';
+					var xmp = document.createElement('xmp')
+					xmp.innerText = html
+					d.append(xmp);
+				}
+			})
+	})
+
+    
+});
+
+
+</script>
+</html>

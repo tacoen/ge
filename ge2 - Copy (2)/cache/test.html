@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charSet='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>	
+<script type='text/javascript' src='ge2.min.js'></script>
+<link rel='stylesheet' href='ge2.min.css' type='text/css' media='all'>
+<title>Test</title>
+</head>
+<body>
+
+<nav topnav class='flex'>
+
+<a data-toggle='#sitemenu' class='favicon'><img src='/favicon.ico'></a>
+
+<div class='flex middle right'>
+	<button onclick='ta.theme_switch(this)' data-theme='light' class='themeswitcher naked'>
+	<i class='dark' data-icon='adjust-2'></i>
+	<i class='light' data-icon='adjust'></i>
+	</button>
+
+</div>
+</nav><!--topnav-->
+<div id="sitemenu" class="hide">
+<button class="naked closer" data-toggle="#sitemenu">
+<i data-icon="cross"></i>
+</button>
+<header>
+<h1 class="red fg">Ge(骼) 2.0</h1>
+</header>
+<div class="flex w100 container sitemenu" data-fetch="../_sitemenu.html"></div>
+</div>
+
+<div class='w100 pa'>
+<h1>Packed Test</h1>
+<p>Check the console!</p>
+</div>
+	
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+ta.fetch('#sitemenu .container');
+
+ta.mediaWidth();
+
+taicon.delay();
+
+});
+</script>
+
+</body>
+</html>
